@@ -1,0 +1,628 @@
+
+/* =====================================================
+   PENGGUNAAN LAYANAN
+===================================================== */
+
+.su-page {
+    width: 100%;
+    min-width: 0;
+    color: #171717;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.su-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.su-header .page-title {
+    margin: 0 0 5px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #171717;
+}
+
+.su-subtitle {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Tombol export */
+
+.su-btn-export {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    background: #ef2c23;
+    color: #ffffff;
+
+    border: 1px solid #ef2c23;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.su-btn-export:hover {
+    background: #c9231b;
+    border-color: #c9231b;
+    color: #fff;
+}
+
+/* =====================================================
+   FILTER
+===================================================== */
+
+.su-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.su-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    min-width: 190px;
+}
+
+.su-filter label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+}
+
+.su-filter select {
+    width: 100%;
+    height: 42px;
+
+    padding: 0 14px;
+
+    border: 1px solid #d7d7d7;
+    border-radius: 7px;
+
+    background-color: #fff;
+    color: #222;
+
+    font-size: 13px;
+    outline: none;
+    cursor: pointer;
+}
+
+.su-filter select:focus {
+    border-color: #ef2c23;
+    box-shadow: 0 0 0 3px rgba(239, 44, 35, 0.1);
+}
+
+.su-reset {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 42px;
+    padding: 0 16px;
+
+    color: #ef2c23;
+    background: #fff;
+
+    border: 1px solid #ef2c23;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.su-reset:hover {
+    background: #fff0ef;
+}
+
+/* =====================================================
+   KARTU STATISTIK
+===================================================== */
+
+.su-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 12px;
+}
+
+.su-card {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 9px;
+    min-width: 0;
+}
+
+.su-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 126px;
+
+    padding: 20px;
+    text-align: center;
+}
+
+.su-stat-title {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.su-stat-value {
+    font-size: 31px;
+    font-weight: 700;
+    color: #171717;
+    line-height: 1.3;
+}
+
+.su-stat-value small {
+    font-size: 16px;
+    font-weight: 600;
+    color: #171717;
+}
+
+.su-underline {
+    display: inline-block;
+    border-bottom: 3px solid #3498db;
+}
+
+.su-stat-delta {
+    margin-top: 7px;
+    font-size: 12px;
+    color: #666;
+}
+
+.su-stat-delta.up {
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.su-stat-delta.down {
+    color: #ef2c23;
+    font-weight: 600;
+}
+
+.su-stat-delta span {
+    font-weight: 400;
+    color: #777;
+}
+
+.su-text-green {
+    color: #16a34a;
+}
+
+.su-text-red {
+    color: #ef2c23;
+}
+
+.su-note {
+    margin: 0 0 20px;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.7;
+}
+
+.su-note strong {
+    font-weight: 600;
+    color: #333;
+}
+
+.su-note-warn {
+    padding: 10px 14px;
+    border: 1px solid #f7d08b;
+    border-radius: 7px;
+    background: #fff5e4;
+    color: #945e14;
+}
+
+/* =====================================================
+   GRAFIK
+===================================================== */
+
+.su-charts {
+    display: grid;
+    grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+    margin-bottom: 24px;
+}
+
+.su-chart-card {
+    padding: 20px;
+    min-height: 340px;
+}
+
+.su-chart-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.su-chart-head h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #171717;
+}
+
+.su-chart-box {
+    position: relative;
+    width: 100%;
+    height: 260px;
+}
+
+.su-chart-box canvas {
+    max-width: 100%;
+}
+
+.su-chart-note {
+    margin: 14px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+    color: #888;
+}
+
+/* Grafik donut */
+
+.su-donut-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    min-height: 260px;
+}
+
+.su-donut-box {
+    position: relative;
+    width: 210px;
+    height: 210px;
+    flex-shrink: 0;
+}
+
+.su-legend {
+    display: flex;
+    gap: 12px;
+}
+
+.su-legend-col {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.su-legend span {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 12px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.su-legend .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.su-legend .dot-active {
+    background: #22c55e;
+}
+
+.su-legend .dot-inactive {
+    background: #ef4444;
+}
+
+.su-legend .dot-other {
+    background: #a3a3a3;
+}
+
+.su-chart-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 260px;
+
+    text-align: center;
+    color: #888;
+    font-size: 14px;
+}
+
+/* =====================================================
+   TABEL PELANGGAN
+===================================================== */
+
+.su-customer-section {
+    margin: 28px 0;
+    scroll-margin-top: 24px;
+}
+
+.su-table-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.su-table-head h3 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #171717;
+}
+
+.su-table-head p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.su-result-count {
+    flex-shrink: 0;
+    padding: 8px 14px;
+
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+
+    font-size: 12px;
+    color: #555;
+}
+
+.su-page .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+}
+
+.su-customer-table {
+    width: 100%;
+    min-width: 1050px;
+}
+
+.su-customer-table th,
+.su-customer-table td {
+    padding: 15px 12px;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.su-customer-table th {
+    font-weight: 700;
+    background: #ffffff;
+}
+
+.su-customer-table tbody tr:nth-child(odd) {
+    background: #fff2f2;
+}
+
+.su-customer-table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.su-customer-table td.su-cell-left {
+    text-align: left;
+}
+
+.su-customer-table td.su-nowrap {
+    white-space: nowrap;
+}
+
+.su-customer-table td:last-child {
+    white-space: nowrap;
+}
+
+/* Footer dan pagination */
+
+.su-page .table-footer {
+    margin-top: 15px;
+}
+
+/* =====================================================
+   ANALISA DAN REKOMENDASI
+===================================================== */
+
+.su-insights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin: 24px 0;
+}
+
+.su-insight {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    padding: 18px;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+}
+
+.su-insight-green {
+    background: #ddf8e2;
+    border-color: #9be3ac;
+}
+
+.su-insight-blue {
+    background: #dceafb;
+    border-color: #a7cafa;
+}
+
+.su-insight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.su-insight-green .su-insight-icon {
+    background: #b0edba;
+    color: #159b3c;
+}
+
+.su-insight-blue .su-insight-icon {
+    background: #bdd9fa;
+    color: #174b7b;
+}
+
+.su-insight-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.su-insight h4 {
+    margin: 0 0 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #171717;
+}
+
+.su-insight p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.su-link {
+    display: block;
+    width: fit-content;
+    margin-top: 14px;
+    margin-left: auto;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #174b7b;
+    text-decoration: none;
+}
+
+.su-link:hover {
+    text-decoration: underline;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1200px) {
+
+    .su-donut-wrap {
+        flex-direction: column;
+    }
+
+    .su-legend-col {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media (max-width: 1000px) {
+
+    .su-charts {
+        grid-template-columns: 1fr;
+    }
+
+    .su-insights {
+        grid-template-columns: 1fr;
+    }
+
+    .su-donut-wrap {
+        flex-direction: row;
+    }
+
+    .su-legend-col {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .su-header {
+        flex-wrap: wrap;
+    }
+
+    .su-header .page-title {
+        font-size: 25px;
+    }
+
+    .su-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .su-filter {
+        flex: 1;
+        min-width: 150px;
+    }
+
+    .su-stat {
+        min-height: 110px;
+    }
+
+    .su-stat-value {
+        font-size: 28px;
+    }
+
+    .su-table-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .su-chart-card {
+        padding: 16px;
+    }
+
+    .su-donut-wrap {
+        flex-direction: column;
+    }
+
+    .su-legend-col {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+}

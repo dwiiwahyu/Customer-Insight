@@ -1,0 +1,127 @@
+/* ================= KARTU RINGKASAN ================= */
+.in-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.in-stat {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 22px 20px;
+}
+
+.in-stat span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.in-stat strong {
+    display: block;
+    margin: 10px 0 6px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #333;
+}
+
+.in-stat strong em {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: #666;
+}
+
+.in-stat small {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.in-stat .text-green  { color: #2ee045; }
+.in-stat .text-purple { color: #8e24aa; }
+.in-stat .text-red    { color: #e11d1d; }
+
+/* ================= CHIP FILTER ================= */
+.chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.chip {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.chip:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.chip.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+}
+
+/* ================= TABEL ================= */
+.chips + .table-wrap {
+    margin-top: 18px;
+}
+
+.cell-left {
+    text-align: left !important;
+}
+
+.cell-left small,
+.cell-note {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.cust-link {
+    font-weight: 600;
+}
+
+.cust-link:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.rec-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.rec-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.rec-list .badge {
+    flex-shrink: 0;
+    font-size: 12px;
+    padding: 4px 10px;
+}
+
+/* ================= RESPONSIF ================= */
+@media (max-width: 1400px) {
+    .in-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

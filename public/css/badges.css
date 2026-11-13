@@ -1,0 +1,21 @@
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.badge-green  { background: #e3f7e8; color: #1a9b3c; }
+.badge-red    { background: #fde0de; color: #d0211b; }
+.badge-yellow { background: #f6f0cf; color: #8a7810; }
+.badge-orange { background: #fde8d2; color: #a8541a; }
+.badge-purple { background: #f1e5f9; color: #8e24aa; }
+
+a.badge-purple:hover {
+    background: #e6d0f3;
+}
+
+.badge-gray { background: #ececec; color: #666; }

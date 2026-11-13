@@ -1,0 +1,129 @@
+
+/* =========================================
+   HALAMAN NOTIFIKASI
+========================================= */
+
+.nt-page {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Header halaman */
+.nt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.nt-header .page-title {
+    margin: 0 0 6px;
+}
+
+.nt-header .page-subtitle {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Panel utama peringatan */
+.nt-page .pb-section {
+    margin-top: 0;
+    margin-bottom: 24px;
+    padding: 24px;
+}
+
+/* Judul dan filter */
+.nt-page .pb-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.nt-page .pb-title {
+    margin: 0;
+}
+
+/* Daftar notifikasi */
+.nt-page .notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* Hapus batas scroll kecil dari halaman lama */
+    max-height: none;
+    height: auto;
+    overflow: visible;
+}
+
+/* Kartu notifikasi */
+.nt-page .notif {
+    margin: 0;
+}
+
+/* Pastikan item yang difilter benar-benar tersembunyi */
+.nt-page .notif[hidden],
+.nt-page .notif-empty[hidden] {
+    display: none !important;
+}
+
+/* Kondisi kategori kosong */
+.nt-page .notif-empty {
+    padding: 30px 16px;
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Filter */
+.nt-page .chips {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .nt-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nt-page .pb-section {
+        padding: 16px;
+    }
+
+    .nt-page .pb-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nt-page .notif {
+        flex-wrap: wrap;
+    }
+
+    .nt-page .notif-body {
+        flex: 1;
+        min-width: 180px;
+    }
+
+    .nt-page .chips {
+        width: 100%;
+    }
+
+    .nt-page .notif > a {
+        margin-left: auto;
+    }
+
+}

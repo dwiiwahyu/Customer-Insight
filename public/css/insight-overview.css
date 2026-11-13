@@ -1,0 +1,269 @@
+/* ===== Insight & Rekomendasi ===== */
+:root {
+    --ov-red: #ee2d24;
+    --ov-red-dark: #c8211a;
+    --ov-text: #2b2b2b;
+    --ov-muted: #6b6b6b;
+    --ov-border: #d9d9d9;
+    --ov-focus: #2196f3;
+}
+
+/* ---------- Header ---------- */
+.ov-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.ov-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    background: var(--ov-red);
+    color: #fff;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* ---------- Kartu ringkasan ---------- */
+.ov-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.ov-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 14px;
+    background: #fff;
+    border: 1px solid var(--ov-border);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--ov-text);
+}
+.ov-stat-title { font-size: 15px; font-weight: 600; }
+.ov-stat strong { font-size: 30px; font-weight: 800; color: #000; line-height: 1.1; }
+.ov-stat small { font-size: 11px; color: var(--ov-muted); }
+
+/* ---------- Panel ---------- */
+.ov-main {
+    display: grid;
+    grid-template-columns: 1.9fr 1fr;
+    gap: 20px;
+}
+.ov-panel {
+    background: #fff;
+    border: 1px solid var(--ov-border);
+    border-radius: 8px;
+    padding: 20px 22px;
+}
+.ov-panel-title { margin: 0 0 18px; font-size: 17px; font-weight: 700; color: #111; }
+
+/* ---------- Rekomendasi utama ---------- */
+.ov-reco-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.ov-reco { display: flex; align-items: center; gap: 16px; }
+.ov-reco-icon {
+    flex: 0 0 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.ov-reco-icon .ov-ico { width: 22px; height: 22px; }
+.ov-reco-body { flex: 1; min-width: 0; }
+.ov-reco-body h3 { margin: 0 0 3px; font-size: 14px; font-weight: 700; color: #111; }
+.ov-reco-body p { margin: 0; font-size: 12px; line-height: 1.45; color: var(--ov-text); }
+
+/* Warna ikon (dipakai di halaman 1 dan 2) */
+.ov-icon-orange { background: #fde3bd; color: #f5a031; }
+.ov-icon-blue   { background: #b8d6f7; color: #123a6b; }
+.ov-icon-red    { background: #fbbcbc; color: var(--ov-red); }
+.ov-icon-purple { background: #e3d4fb; color: #7b3fe4; }
+.ov-icon-green  { background: #c8f2cf; color: #1f9d3a; }
+.ov-icon-yellow { background: #fff0b3; color: #e0a100; }
+
+/* ---------- Tombol ---------- */
+.ov-btn {
+    display: inline-block;
+    background: var(--ov-red);
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.15s;
+}
+.ov-btn:hover { background: var(--ov-red-dark); }
+.ov-btn-sm { padding: 5px 22px; font-size: 11px; white-space: nowrap; }
+.ov-btn-block { display: block; padding: 10px 14px; font-size: 13px; }
+.ov-btn-back { padding: 7px 14px; font-size: 12px; margin-bottom: 18px; }
+
+/* ---------- Insight cepat ---------- */
+.ov-quick {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ov-quick:hover { border-color: var(--ov-focus); box-shadow: 0 0 0 1px var(--ov-focus); }
+.ov-quick .ov-panel-title { align-self: flex-start; }
+.ov-quick-art {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    background: #fde1df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 4px 0 16px;
+}
+.ov-quick-text { margin: 0 0 18px; font-size: 12px; line-height: 1.55; color: var(--ov-text); }
+.ov-quick .ov-btn-block { width: 100%; margin-top: auto; }
+
+/* ---------- Halaman Rekomendasi Lengkap ---------- */
+.ov-full-table tbody tr:nth-child(odd) { background: #fdeeee; }
+.ov-mini-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+}
+.ov-mini-icon .ov-ico { width: 14px; height: 14px; }
+.ov-desc { display: block; margin-top: 2px; font-size: 11px; font-weight: 400; color: var(--ov-muted); }
+.ov-muted { color: var(--ov-muted); }
+
+/* ---------- Responsif ---------- */
+@media (max-width: 1100px) {
+    .ov-stats { grid-template-columns: repeat(2, 1fr); }
+    .ov-main { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+    .ov-header { flex-direction: column; }
+    .ov-stats { grid-template-columns: 1fr; }
+    .ov-reco { flex-wrap: wrap; }
+    .ov-reco-body { flex: 1 1 calc(100% - 70px); }
+}
+
+/* ===== Halaman detail rekomendasi (daftar pelanggan) ===== */
+.ov-detail .ov-btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+.ov-detail .page-title { margin: 0 0 6px; }
+.ov-detail .page-subtitle { margin: 0 0 22px; color: var(--ov-muted); }
+
+.ov-detail .table-wrap {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+}
+
+/* Tabel: lebar kolom tetap supaya semua halaman detail konsisten */
+.ov-detail .ov-detail-table {
+    width: 100%;
+    min-width: 980px;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.ov-detail .ov-detail-table th:nth-child(1) { width: 52px; }
+.ov-detail .ov-detail-table th:nth-child(2) { width: 210px; }
+.ov-detail .ov-detail-table th:nth-child(3) { width: 140px; }
+.ov-detail .ov-detail-table th:nth-child(4) { width: 150px; }
+.ov-detail .ov-detail-table th:nth-child(5) { width: 90px; }
+.ov-detail .ov-detail-table th:nth-child(7) { width: 120px; }
+/* kolom Rekomendasi (ke-6) otomatis mengambil sisa lebar */
+
+.ov-detail .ov-detail-table th,
+.ov-detail .ov-detail-table td {
+    padding: 14px 12px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 13px;
+}
+.ov-detail .ov-detail-table th {
+    font-weight: 700;
+    line-height: 1.3;
+}
+.ov-detail .ov-detail-table th.cell-left,
+.ov-detail .ov-detail-table td.cell-left {
+    text-align: left;
+}
+
+/* Warna selang-seling baris */
+.ov-detail .ov-detail-table tbody tr:nth-child(odd)  { background: #fdeeee; }
+.ov-detail .ov-detail-table tbody tr:nth-child(even) { background: #fff; }
+
+/* Kolom pelanggan: nama di atas, kode di bawah */
+.ov-detail .ov-detail-table .cust-link {
+    display: block;
+    font-weight: 600;
+    color: #111;
+    text-decoration: none;
+}
+.ov-detail .ov-detail-table .cust-link:hover {
+    color: var(--ov-red);
+    text-decoration: underline;
+}
+.ov-detail .ov-detail-table td small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: var(--ov-muted);
+}
+
+/* Kolom rekomendasi: tanpa bullet, badge sejajar di kolom sendiri */
+.ov-detail .ov-detail-table .rec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.ov-detail .ov-detail-table .rec-list li {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    column-gap: 10px;
+    align-items: start;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.ov-detail .ov-detail-table .rec-list li::marker { content: ''; }
+.ov-detail .ov-detail-table .rec-list .badge {
+    justify-self: start;
+    white-space: nowrap;
+}
+.ov-detail .ov-detail-table .badge { white-space: nowrap; }
+
+/* Baris kosong */
+.ov-detail .ov-detail-table .empty-row td {
+    padding: 28px;
+    color: var(--ov-muted);
+    background: #fff;
+}
+
+/* Footer tabel */
+.ov-detail .table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+.ov-detail .table-info { font-size: 12px; color: var(--ov-muted); }

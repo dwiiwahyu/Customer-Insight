@@ -1,0 +1,419 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --red: #ee2e24;
+    --red-dark: #c4241c;
+    --bg: #f4f4f4;
+    --text: #111111;
+    --muted: #555555;
+    --border: #d9d9d9;
+    --sidebar-w: 294px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--sidebar-w);
+    background: var(--red);
+    padding: 48px 22px;
+    overflow-y: auto;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 18px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* Kotak ikon: latar putih transparan, sudut membulat */
+.brand-logo {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo svg {
+    width: 34px;
+    height: 34px;
+}
+
+.brand-text {
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.sidebar-menu a {
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 26px;
+    border-radius: 10px;
+    margin-bottom: 11px;
+    transition: background 0.15s;
+}
+
+.sidebar-menu a:hover {
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.sidebar-menu a.active {
+    background: var(--red-dark);
+}
+
+/* ================= AREA UTAMA ================= */
+.main {
+    margin-left: var(--sidebar-w);
+    padding: 32px 42px 48px 24px;
+    min-height: 100vh;
+}
+
+.content {
+    margin-top: 40px;
+}
+
+/* Judul halaman (dipakai semua halaman) */
+.page-title {
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 6px;
+}
+
+/* ================= TOPBAR ================= */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.topbar-search {
+    flex: 0 1 530px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: #777;
+}
+
+.topbar-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.topbar-search input::placeholder {
+    color: #888;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icon-btn {
+    width: 56px;
+    height: 56px;
+    border: none;
+    border-radius: 50%;
+    background: var(--red);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.icon-btn:hover {
+    background: var(--red-dark);
+}
+
+/* ---------- Profil user ---------- */
+.user-menu {
+    position: relative;
+}
+
+.user-btn {
+    height: 55px;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 16px 0 8px;
+    border: none;
+    border-radius: 8px;
+    background: var(--red);
+    color: #fff;
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+
+.user-btn:hover {
+    background: var(--red-dark);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--red);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.user-info strong {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.user-info small {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.user-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 8px);
+    width: 100%;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    z-index: 50;
+}
+
+.user-dropdown.show {
+    display: block;
+}
+
+.user-dropdown button {
+    width: 100%;
+    padding: 14px 18px;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--red);
+    text-align: left;
+    cursor: pointer;
+}
+
+.user-dropdown button:hover {
+    background: #fdecea;
+}
+
+/* ================= RESPONSIF ================= */
+@media (max-width: 1100px) {
+    :root {
+        --sidebar-w: 230px;
+    }
+
+    .sidebar-menu a {
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    .user-btn {
+        min-width: 0;
+    }
+
+    .user-info {
+        display: none;
+    }
+}
+
+/* ================= NOTIFIKASI LONCENG ================= */
+.notif-menu {
+    position: relative;
+}
+
+.notif-menu .icon-btn {
+    position: relative;
+}
+
+.notif-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 5px;
+    border-radius: 11px;
+    background: #fff;
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nd-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 10px);
+    width: 380px;
+    max-width: calc(100vw - 32px);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+    overflow: hidden;
+    z-index: 60;
+}
+
+.nd-dropdown.show {
+    display: block;
+}
+
+.nd-head {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.nd-list {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.nd-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #eee;
+}
+
+.nd-item:hover {
+    background: #fff3f3;
+}
+
+.nd-item strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nd-item small {
+    display: block;
+    margin-top: 2px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #555;
+}
+
+.nd-dot {
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.nd-red    { background: #ee3a3a; }
+.nd-orange { background: #f7a23b; }
+.nd-blue   { background: #3b82f6; }
+
+.nd-empty {
+    padding: 28px 18px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.nd-foot {
+    display: block;
+    padding: 13px 18px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.nd-foot:hover {
+    background: #fdecea;
+}
+
+@media (max-width: 1100px) {
+    .sidebar-brand {
+        gap: 10px;
+        padding-left: 14px;
+    }
+
+    .brand-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .brand-logo svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .brand-text {
+        font-size: 17px;
+    }
+}

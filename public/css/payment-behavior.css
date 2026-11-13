@@ -1,0 +1,270 @@
+/* ================= KARTU RINGKASAN ================= */
+.pb-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.pb-stat {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 22px 20px;
+}
+
+.pb-stat span {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pb-stat strong {
+    display: block;
+    margin: 10px 0 6px;
+    font-size: 34px;
+    font-weight: 700;
+    color: #333;
+}
+
+.pb-stat small {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.pb-stat .text-red   { color: #e11d1d; }
+.pb-stat .text-green { color: #2ee045; }
+
+/* ================= PANEL & GRAFIK ================= */
+.pb-panel {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px 26px 26px;
+}
+
+.pb-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pb-charts {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.pb-charts .pb-title {
+    margin-bottom: 14px;
+}
+
+.pb-box {
+    position: relative;
+    height: 230px;
+}
+
+.pb-donut {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.pb-donut-box {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
+.pb-legend {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+    color: #444;
+}
+
+.pb-dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-right: 10px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.dot-green  { background: #38e34d; }
+.dot-yellow { background: #f2c94c; }
+.dot-orange { background: #f7a23b; }
+.dot-red    { background: #ee2e24; }
+
+/* ================= PERINGATAN ================= */
+.pb-section {
+    margin-top: 30px;
+}
+
+.pb-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+}
+
+.chip:hover {
+    border-color: var(--red);
+    color: var(--red);
+}
+
+.chip.active {
+    background: var(--red);
+    border-color: var(--red);
+    color: #fff;
+}
+
+.notif-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 440px;
+    overflow-y: auto;
+    margin-top: 18px;
+    padding-right: 4px;
+}
+
+.notif {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.notif[hidden] {
+    display: none;
+}
+
+.notif-red {
+    background: #ffe9e8;
+    border-color: #f5b8b5;
+}
+
+.notif-orange {
+    background: #fff3e3;
+    border-color: #f6d3a2;
+}
+
+.notif-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notif-red .notif-icon    { background: #ee3a3a; }
+.notif-orange .notif-icon { background: #f7a23b; }
+
+.notif-body {
+    flex: 1;
+    font-size: 14.5px;
+    line-height: 1.45;
+}
+
+.notif-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.notif-action {
+    margin-top: 4px;
+}
+
+.notif-action b {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.notif-empty {
+    padding: 32px 12px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* ================= TABEL ================= */
+.pb-table-head {
+    margin: 34px 0 14px;
+}
+
+.cell-left {
+    text-align: left !important;
+}
+
+.cell-left small,
+.cell-note {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.cust-link {
+    font-weight: 600;
+}
+
+.cust-link:hover {
+    color: var(--red);
+    text-decoration: underline;
+}
+
+.text-red {
+    color: #e11d1d;
+    font-weight: 600;
+}
+
+/* ================= RESPONSIF ================= */
+@media (max-width: 1400px) {
+    .pb-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .pb-charts {
+        grid-template-columns: 1fr;
+    }
+
+    .notif {
+        flex-wrap: wrap;
+    }
+}
