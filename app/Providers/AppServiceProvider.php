@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Providers;
@@ -6,6 +7,7 @@ use App\Services\InsightService;
 use App\Services\PaymentBehaviorService;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,6 +19,11 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        // Paksa Laravel menggunakan HTTPS di production
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
+
         // Setiap topbar dirender, kirim data notifikasi ke view-nya
         View::composer('partials.topbar', function ($view) {
             if (! auth()->check()) {
