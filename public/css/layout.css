@@ -417,3 +417,132 @@ a {
         font-size: 17px;
     }
 }
+/* =====================================================
+   RESPONSIF: TABLET & HP
+   ===================================================== */
+
+/* Tombol hamburger & overlay: disembunyikan di desktop */
+.menu-toggle { display: none; }
+.sidebar-overlay { display: none; }
+
+/* ---------- Tablet (<= 1100px) ---------- */
+@media (max-width: 1100px) {
+    /* Dropdown profil tidak ikut menyempit mengikuti tombolnya */
+    .user-dropdown {
+        width: auto;
+        min-width: 160px;
+    }
+}
+
+/* ---------- Sidebar jadi menu geser (<= 900px) ---------- */
+@media (max-width: 900px) {
+    body.sidebar-open { overflow: hidden; }
+
+    .sidebar {
+        width: 270px;
+        padding: 32px 18px;
+        z-index: 100;
+        transform: translateX(-100%);
+        transition: transform 0.25s ease;
+    }
+
+    body.sidebar-open .sidebar {
+        transform: translateX(0);
+        box-shadow: 8px 0 24px rgba(0, 0, 0, 0.25);
+    }
+
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 90;
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    body.sidebar-open .sidebar-overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Area utama memenuhi lebar layar */
+    .main {
+        position: relative;
+        margin-left: 0;
+        padding: 16px 16px 32px;
+    }
+
+    .content { margin-top: 24px; }
+
+    /* Tombol hamburger di pojok kiri atas */
+    .menu-toggle {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 46px;
+        height: 46px;
+        border: none;
+        border-radius: 8px;
+        background: var(--red);
+        color: #fff;
+        cursor: pointer;
+        transition: background 0.15s;
+    }
+    .menu-toggle:hover { background: var(--red-dark); }
+
+    /* Topbar: ikon di baris atas (kanan), kolom pencarian di baris bawah */
+    .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .topbar-actions {
+        order: 1;
+        margin-left: auto;
+        gap: 10px;
+    }
+    .topbar-search {
+        order: 2;
+        flex: 1 1 100%;
+        height: 46px;
+        padding: 0 14px;
+    }
+    .icon-btn { width: 46px; height: 46px; }
+    .user-btn { height: 46px; padding: 0 10px 0 6px; }
+    .user-avatar { width: 34px; height: 34px; }
+
+    /* Judul halaman */
+    .page-title { font-size: 26px; }
+    .page-subtitle { font-size: 15px; }
+
+    /* Tabel: bisa digeser ke samping, tidak merusak halaman */
+    .content .table-wrap {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .content .data-table { min-width: 720px; }
+    .content .table-footer {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* ---------- HP (<= 640px) ---------- */
+@media (max-width: 640px) {
+    .page-title { font-size: 22px; }
+    .page-subtitle { font-size: 14px; }
+
+    /* Dropdown notifikasi: lebar penuh layar, tidak terpotong di kiri */
+    .nd-dropdown {
+        position: fixed;
+        top: 72px;
+        left: 16px;
+        right: 16px;
+        width: auto;
+        max-width: none;
+    }
+}
