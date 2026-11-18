@@ -19,7 +19,17 @@
 
     @include('partials.sidebar')
 
+    {{-- Lapisan gelap di belakang sidebar (hanya muncul di layar kecil saat menu dibuka) --}}
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <div class="main">
+        {{-- Tombol hamburger (hanya tampil di layar kecil) --}}
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+
         @include('partials.topbar')
 
         <main class="content">
@@ -28,6 +38,7 @@
     </div>
 
     <script src="{{ asset('js/layout.js') }}"></script>
+    <script src="{{ asset('js/sidebar-toggle.js') }}"></script>
 
     {{-- JS khusus halaman, diisi lewat @push('scripts') --}}
     @stack('scripts')
