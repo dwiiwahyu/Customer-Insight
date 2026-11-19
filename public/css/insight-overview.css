@@ -1,4 +1,13 @@
-/* ===== Insight & Rekomendasi ===== */
+
+/* =====================================================
+   CUSTOMER INSIGHT - INSIGHT & REKOMENDASI
+   COMPACT RESPONSIVE PC & LAPTOP
+===================================================== */
+
+/* =====================================================
+   1. ROOT VARIABLES
+===================================================== */
+
 :root {
     --ov-red: #ee2d24;
     --ov-red-dark: #c8211a;
@@ -8,264 +17,1281 @@
     --ov-focus: #2196f3;
 }
 
-/* ---------- Header ---------- */
+/* =====================================================
+   2. HEADER HALAMAN
+===================================================== */
+
 .ov-header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    width: 100%;
+    min-width: 0;
+
+    margin-bottom: 18px;
 }
+
+.ov-header > * {
+    min-width: 0;
+}
+
+/* ===== DATE BADGE ===== */
+
 .ov-date {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 14px;
+    justify-content: center;
+    gap: 7px;
+
+    min-height: 34px;
+    padding: 7px 12px;
+
     background: var(--ov-red);
-    color: #fff;
+    color: #ffffff;
+
     border-radius: 6px;
-    font-size: 12px;
+
+    font-size: 11px;
     font-weight: 600;
+    line-height: 1.4;
+
     white-space: nowrap;
 }
 
-/* ---------- Kartu ringkasan ---------- */
+/* =====================================================
+   3. KARTU STATISTIK
+===================================================== */
+
 .ov-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+    margin-bottom: 22px;
+
+    width: 100%;
 }
-/* Tabel Rekomendasi Lengkap lebih ringkas dari tabel pelanggan */
-.ov-full-table { min-width: 760px; }
+
+/* ===== STAT CARD ===== */
+
 .ov-stat {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 20px 14px;
-    background: #fff;
+    justify-content: center;
+
+    min-width: 0;
+    min-height: 125px;
+
+    gap: 8px;
+    padding: 18px 12px;
+
+    background: #ffffff;
+    color: var(--ov-text);
+
     border: 1px solid var(--ov-border);
     border-radius: 8px;
-    text-align: center;
-    color: var(--ov-text);
-}
-.ov-stat-title { font-size: 15px; font-weight: 600; }
-.ov-stat strong { font-size: 30px; font-weight: 800; color: #000; line-height: 1.1; }
-.ov-stat small { font-size: 11px; color: var(--ov-muted); }
 
-/* ---------- Panel ---------- */
+    text-align: center;
+}
+
+/* ===== STAT TITLE ===== */
+
+.ov-stat-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+/* ===== STAT VALUE ===== */
+
+.ov-stat strong {
+    display: block;
+
+    font-size: 27px;
+    font-weight: 800;
+    line-height: 1.15;
+
+    color: #111111;
+
+    overflow-wrap: anywhere;
+}
+
+/* ===== STAT DESCRIPTION ===== */
+
+.ov-stat small {
+    font-size: 10px;
+    line-height: 1.4;
+
+    color: var(--ov-muted);
+}
+
+/* =====================================================
+   4. MAIN GRID
+===================================================== */
+
 .ov-main {
     display: grid;
-    grid-template-columns: 1.9fr 1fr;
-    gap: 20px;
+
+    grid-template-columns:
+        minmax(0, 1.9fr)
+        minmax(0, 1fr);
+
+    align-items: stretch;
+    gap: 16px;
+
+    width: 100%;
+    min-width: 0;
 }
+
+/* =====================================================
+   5. PANEL
+===================================================== */
+
 .ov-panel {
-    background: #fff;
+    min-width: 0;
+
+    padding: 18px;
+
+    background: #ffffff;
+
     border: 1px solid var(--ov-border);
     border-radius: 8px;
-    padding: 20px 22px;
 }
-.ov-panel-title { margin: 0 0 18px; font-size: 17px; font-weight: 700; color: #111; }
 
-/* ---------- Rekomendasi utama ---------- */
-.ov-reco-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
-.ov-reco { display: flex; align-items: center; gap: 16px; }
+.ov-panel-title {
+    margin: 0 0 16px;
+
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #111111;
+}
+
+/* =====================================================
+   6. REKOMENDASI UTAMA
+===================================================== */
+
+.ov-reco-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+/* ===== RECOMMENDATION ITEM ===== */
+
+.ov-reco {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    min-width: 0;
+}
+
+/* ===== RECOMMENDATION ICON ===== */
+
 .ov-reco-icon {
-    flex: 0 0 46px;
-    height: 46px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex: 0 0 38px;
+
+    border-radius: 50%;
 }
-.ov-reco-icon .ov-ico { width: 22px; height: 22px; }
-.ov-reco-body { flex: 1; min-width: 0; }
-.ov-reco-body h3 { margin: 0 0 3px; font-size: 14px; font-weight: 700; color: #111; }
-.ov-reco-body p { margin: 0; font-size: 12px; line-height: 1.45; color: var(--ov-text); }
 
-/* Warna ikon (dipakai di halaman 1 dan 2) */
-.ov-icon-orange { background: #fde3bd; color: #f5a031; }
-.ov-icon-blue   { background: #b8d6f7; color: #123a6b; }
-.ov-icon-red    { background: #fbbcbc; color: var(--ov-red); }
-.ov-icon-purple { background: #e3d4fb; color: #7b3fe4; }
-.ov-icon-green  { background: #c8f2cf; color: #1f9d3a; }
-.ov-icon-yellow { background: #fff0b3; color: #e0a100; }
+.ov-reco-icon .ov-ico {
+    width: 19px;
+    height: 19px;
+}
 
-/* ---------- Tombol ---------- */
+/* ===== RECOMMENDATION BODY ===== */
+
+.ov-reco-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.ov-reco-body h3 {
+    margin: 0 0 4px;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: #111111;
+}
+
+.ov-reco-body p {
+    margin: 0;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: var(--ov-text);
+
+    overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   7. WARNA IKON REKOMENDASI
+===================================================== */
+
+.ov-icon-orange {
+    background: #fde3bd;
+    color: #f5a031;
+}
+
+.ov-icon-blue {
+    background: #b8d6f7;
+    color: #123a6b;
+}
+
+.ov-icon-red {
+    background: #fbbcbc;
+    color: var(--ov-red);
+}
+
+.ov-icon-purple {
+    background: #e3d4fb;
+    color: #7b3fe4;
+}
+
+.ov-icon-green {
+    background: #c8f2cf;
+    color: #1f9d3a;
+}
+
+.ov-icon-yellow {
+    background: #fff0b3;
+    color: #e0a100;
+}
+
+/* =====================================================
+   8. TOMBOL REKOMENDASI
+===================================================== */
+
 .ov-btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    border: 1px solid var(--ov-red);
+    border-radius: 6px;
+
     background: var(--ov-red);
-    color: #fff;
+    color: #ffffff;
+
+    font-family: inherit;
     font-weight: 600;
+    line-height: 1.4;
+
     text-align: center;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background 0.15s;
-}
-.ov-btn:hover { background: var(--ov-red-dark); }
-.ov-btn-sm { padding: 5px 22px; font-size: 11px; white-space: nowrap; }
-.ov-btn-block { display: block; padding: 10px 14px; font-size: 13px; }
-.ov-btn-back { padding: 7px 14px; font-size: 12px; margin-bottom: 18px; }
 
-/* ---------- Insight cepat ---------- */
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease;
+}
+
+.ov-btn:hover {
+    background: var(--ov-red-dark);
+    border-color: var(--ov-red-dark);
+    color: #ffffff;
+}
+
+/* ===== SMALL BUTTON ===== */
+
+.ov-btn-sm {
+    min-height: 30px;
+    padding: 5px 14px;
+
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+/* ===== BLOCK BUTTON ===== */
+
+.ov-btn-block {
+    display: flex;
+    width: 100%;
+
+    min-height: 36px;
+    padding: 8px 12px;
+
+    font-size: 12px;
+}
+
+/* ===== BACK BUTTON ===== */
+
+.ov-btn-back {
+    min-height: 34px;
+    padding: 7px 13px;
+
+    margin-bottom: 16px;
+
+    font-size: 11px;
+}
+
+/* =====================================================
+   9. INSIGHT CEPAT
+===================================================== */
+
 .ov-quick {
     display: flex;
     flex-direction: column;
     align-items: center;
+
     text-align: center;
-    transition: border-color 0.15s, box-shadow 0.15s;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
-.ov-quick:hover { border-color: var(--ov-focus); box-shadow: 0 0 0 1px var(--ov-focus); }
-.ov-quick .ov-panel-title { align-self: flex-start; }
+
+.ov-quick:hover {
+    border-color: var(--ov-focus);
+
+    box-shadow:
+        0 0 0 1px var(--ov-focus);
+}
+
+.ov-quick .ov-panel-title {
+    align-self: flex-start;
+    text-align: left;
+}
+
+/* ===== QUICK ART ===== */
+
 .ov-quick-art {
-    width: 104px;
-    height: 104px;
-    border-radius: 50%;
-    background: #fde1df;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 4px 0 16px;
-}
-.ov-quick-text { margin: 0 0 18px; font-size: 12px; line-height: 1.55; color: var(--ov-text); }
-.ov-quick .ov-btn-block { width: 100%; margin-top: auto; }
 
-/* ---------- Halaman Rekomendasi Lengkap ---------- */
-.ov-full-table tbody tr:nth-child(odd) { background: #fdeeee; }
+    width: 85px;
+    height: 85px;
+
+    flex: 0 0 85px;
+
+    margin: 4px 0 14px;
+
+    border-radius: 50%;
+    background: #fde1df;
+}
+
+.ov-quick-art svg,
+.ov-quick-art .ov-ico {
+    max-width: 55px;
+    max-height: 55px;
+}
+
+/* ===== QUICK DESCRIPTION ===== */
+
+.ov-quick-text {
+    margin: 0 0 16px;
+
+    font-size: 11px;
+    line-height: 1.55;
+
+    color: var(--ov-text);
+}
+
+/* ===== QUICK BUTTON ===== */
+
+.ov-quick .ov-btn-block {
+    width: 100%;
+    margin-top: auto;
+}
+
+/* =====================================================
+   10. REKOMENDASI LENGKAP - TABLE
+===================================================== */
+
+.ov-full-table {
+    width: 100%;
+    min-width: 700px;
+
+    border-collapse: collapse;
+}
+
+.ov-full-table th,
+.ov-full-table td {
+    padding: 12px 10px;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    vertical-align: middle;
+}
+
+.ov-full-table tbody tr:nth-child(odd) {
+    background: #fdeeee;
+}
+
+.ov-full-table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.ov-full-table tbody tr:hover {
+    background: #ffe6e4;
+}
+
+/* =====================================================
+   11. MINI ICON
+===================================================== */
+
 .ov-mini-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
+
+    width: 23px;
+    height: 23px;
+
     border-radius: 50%;
 }
-.ov-mini-icon .ov-ico { width: 14px; height: 14px; }
-.ov-desc { display: block; margin-top: 2px; font-size: 11px; font-weight: 400; color: var(--ov-muted); }
-.ov-muted { color: var(--ov-muted); }
 
-/* ---------- Responsif ---------- */
-@media (max-width: 1100px) {
-    .ov-stats { grid-template-columns: repeat(2, 1fr); }
-    .ov-main { grid-template-columns: 1fr; }
-}
-@media (max-width: 640px) {
-    .ov-header { flex-direction: column; }
-    .ov-stats { grid-template-columns: 1fr; }
-    .ov-reco { flex-wrap: wrap; }
-    .ov-reco-body { flex: 1 1 calc(100% - 70px); }
+.ov-mini-icon .ov-ico {
+    width: 13px;
+    height: 13px;
 }
 
-/* ===== Halaman detail rekomendasi (daftar pelanggan) ===== */
+/* =====================================================
+   12. DESCRIPTION & MUTED
+===================================================== */
+
+.ov-desc {
+    display: block;
+    margin-top: 3px;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--ov-muted);
+}
+
+.ov-muted {
+    color: var(--ov-muted);
+}
+
+/* =====================================================
+   13. HALAMAN DETAIL REKOMENDASI
+===================================================== */
+
+.ov-detail {
+    width: 100%;
+    min-width: 0;
+}
+
+/* ===== BACK BUTTON DETAIL ===== */
+
 .ov-detail .ov-btn-back {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 8px 16px;
-    font-size: 13px;
-    margin-bottom: 20px;
+
+    min-height: 36px;
+    padding: 7px 14px;
+
+    margin-bottom: 16px;
+
+    font-size: 11px;
 }
-.ov-detail .page-title { margin: 0 0 6px; }
-.ov-detail .page-subtitle { margin: 0 0 22px; color: var(--ov-muted); }
+
+/* ===== PAGE TITLE ===== */
+
+.ov-detail .page-title {
+    margin: 0 0 5px;
+}
+
+.ov-detail .page-subtitle {
+    margin: 0 0 18px;
+    color: var(--ov-muted);
+}
+
+/* =====================================================
+   14. TABLE WRAPPER
+===================================================== */
 
 .ov-detail .table-wrap {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
     overflow-x: auto;
-    background: #fff;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+
+    background: #ffffff;
+
+    border: 1px solid var(--ov-border);
     border-radius: 8px;
 }
 
-/* Tabel: lebar kolom tetap supaya semua halaman detail konsisten */
+/* Custom scrollbar */
+
+.ov-detail .table-wrap::-webkit-scrollbar {
+    height: 7px;
+}
+
+.ov-detail .table-wrap::-webkit-scrollbar-track {
+    background: #f4f4f4;
+}
+
+.ov-detail .table-wrap::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 10px;
+}
+
+/* =====================================================
+   15. DETAIL TABLE
+===================================================== */
+
 .ov-detail .ov-detail-table {
     width: 100%;
-    min-width: 980px;
+    min-width: 900px;
+
     table-layout: fixed;
     border-collapse: collapse;
 }
-.ov-detail .ov-detail-table th:nth-child(1) { width: 52px; }
-.ov-detail .ov-detail-table th:nth-child(2) { width: 210px; }
-.ov-detail .ov-detail-table th:nth-child(3) { width: 140px; }
-.ov-detail .ov-detail-table th:nth-child(4) { width: 150px; }
-.ov-detail .ov-detail-table th:nth-child(5) { width: 90px; }
-.ov-detail .ov-detail-table th:nth-child(7) { width: 120px; }
-/* kolom Rekomendasi (ke-6) otomatis mengambil sisa lebar */
 
-.ov-detail .ov-detail-table th,
-.ov-detail .ov-detail-table td {
-    padding: 14px 12px;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 13px;
+/* ===== COLUMN WIDTH ===== */
+
+.ov-detail .ov-detail-table th:nth-child(1) {
+    width: 42px;
 }
+
+.ov-detail .ov-detail-table th:nth-child(2) {
+    width: 170px;
+}
+
+.ov-detail .ov-detail-table th:nth-child(3) {
+    width: 115px;
+}
+
+.ov-detail .ov-detail-table th:nth-child(4) {
+    width: 120px;
+}
+
+.ov-detail .ov-detail-table th:nth-child(5) {
+    width: 75px;
+}
+
+.ov-detail .ov-detail-table th:nth-child(7) {
+    width: 105px;
+}
+
+/* Kolom ke-6 mengambil sisa ruang */
+
+/* ===== TABLE HEADER ===== */
+
 .ov-detail .ov-detail-table th {
+    padding: 12px 9px;
+
+    font-size: 11px;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
+
+    text-align: center;
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--ov-border);
 }
+
+/* ===== TABLE BODY ===== */
+
+.ov-detail .ov-detail-table td {
+    padding: 12px 9px;
+
+    font-size: 11px;
+    line-height: 1.5;
+
+    text-align: center;
+    vertical-align: middle;
+
+    overflow-wrap: anywhere;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* ===== LEFT ALIGN ===== */
+
 .ov-detail .ov-detail-table th.cell-left,
 .ov-detail .ov-detail-table td.cell-left {
     text-align: left;
 }
 
-/* Warna selang-seling baris */
-.ov-detail .ov-detail-table tbody tr:nth-child(odd)  { background: #fdeeee; }
-.ov-detail .ov-detail-table tbody tr:nth-child(even) { background: #fff; }
+/* =====================================================
+   16. ZEBRA TABLE
+===================================================== */
 
-/* Kolom pelanggan: nama di atas, kode di bawah */
+.ov-detail .ov-detail-table tbody tr:nth-child(odd) {
+    background: #fdeeee;
+}
+
+.ov-detail .ov-detail-table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+.ov-detail .ov-detail-table tbody tr:hover {
+    background: #ffe6e4;
+}
+
+/* =====================================================
+   17. CUSTOMER LINK
+===================================================== */
+
 .ov-detail .ov-detail-table .cust-link {
     display: block;
+
+    font-size: 11px;
     font-weight: 600;
-    color: #111;
+    line-height: 1.4;
+
+    color: #111111;
     text-decoration: none;
+
+    overflow-wrap: anywhere;
 }
+
 .ov-detail .ov-detail-table .cust-link:hover {
     color: var(--ov-red);
     text-decoration: underline;
 }
+
+/* ===== CUSTOMER CODE ===== */
+
 .ov-detail .ov-detail-table td small {
     display: block;
-    margin-top: 2px;
-    font-size: 11px;
+    margin-top: 3px;
+
+    font-size: 10px;
+    line-height: 1.4;
+
     color: var(--ov-muted);
 }
 
-/* Kolom rekomendasi: tanpa bullet, badge sejajar di kolom sendiri */
+/* =====================================================
+   18. RECOMMENDATION LIST IN TABLE
+===================================================== */
+
 .ov-detail .ov-detail-table .rec-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+
+    gap: 7px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
 }
+
 .ov-detail .ov-detail-table .rec-list li {
     display: grid;
-    grid-template-columns: 140px 1fr;
-    column-gap: 10px;
+
+    grid-template-columns:
+        minmax(85px, 110px)
+        minmax(0, 1fr);
+
     align-items: start;
-    text-align: left;
-    font-size: 12px;
+    column-gap: 8px;
+
+    font-size: 10px;
     line-height: 1.5;
+
+    text-align: left;
 }
-.ov-detail .ov-detail-table .rec-list li::marker { content: ''; }
+
+.ov-detail .ov-detail-table .rec-list li::marker {
+    content: '';
+}
+
+/* ===== BADGE ===== */
+
 .ov-detail .ov-detail-table .rec-list .badge {
     justify-self: start;
+    max-width: 100%;
+
+    font-size: 10px;
     white-space: nowrap;
 }
-.ov-detail .ov-detail-table .badge { white-space: nowrap; }
 
-/* Baris kosong */
-.ov-detail .ov-detail-table .empty-row td {
-    padding: 28px;
-    color: var(--ov-muted);
-    background: #fff;
+.ov-detail .ov-detail-table .badge {
+    white-space: nowrap;
 }
 
-/* Footer tabel */
+/* =====================================================
+   19. EMPTY TABLE
+===================================================== */
+
+.ov-detail .ov-detail-table .empty-row td {
+    padding: 28px 12px;
+
+    color: var(--ov-muted);
+    background: #ffffff;
+
+    text-align: center;
+    font-size: 11px;
+}
+
+/* =====================================================
+   20. TABLE FOOTER
+===================================================== */
+
 .ov-detail .table-footer {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
     gap: 12px;
-    margin-top: 16px;
+    margin-top: 14px;
 }
-.ov-detail .table-info { font-size: 12px; color: var(--ov-muted); }
+
+.ov-detail .table-info {
+    font-size: 11px;
+    line-height: 1.5;
+
+    color: var(--ov-muted);
+}
+
+/* =====================================================
+   21. LARGE DESKTOP
+   MIN 1500px
+===================================================== */
+
+@media (min-width: 1500px) {
+
+    .ov-stats {
+        gap: 18px;
+        margin-bottom: 26px;
+    }
+
+    .ov-stat {
+        min-height: 135px;
+        padding: 20px 16px;
+    }
+
+    .ov-stat-title {
+        font-size: 13px;
+    }
+
+    .ov-stat strong {
+        font-size: 30px;
+    }
+
+    .ov-stat small {
+        font-size: 11px;
+    }
+
+    .ov-main {
+        gap: 20px;
+    }
+
+    .ov-panel {
+        padding: 22px;
+    }
+
+    .ov-panel-title {
+        font-size: 17px;
+    }
+
+    .ov-reco-list {
+        gap: 22px;
+    }
+
+    .ov-reco-icon {
+        width: 43px;
+        height: 43px;
+        flex-basis: 43px;
+    }
+
+    .ov-reco-body h3 {
+        font-size: 13px;
+    }
+
+    .ov-reco-body p {
+        font-size: 12px;
+    }
+
+    .ov-quick-art {
+        width: 100px;
+        height: 100px;
+        flex-basis: 100px;
+    }
+
+    .ov-detail .ov-detail-table {
+        min-width: 980px;
+    }
+
+    .ov-detail .ov-detail-table th,
+    .ov-detail .ov-detail-table td {
+        padding: 14px 11px;
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   22. LAPTOP
+   1200px - 1499px
+===================================================== */
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+
+    .ov-stats {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+    .ov-stat {
+        min-height: 115px;
+        padding: 15px 10px;
+    }
+
+    .ov-stat-title {
+        font-size: 11px;
+    }
+
+    .ov-stat strong {
+        font-size: 25px;
+    }
+
+    .ov-stat small {
+        font-size: 10px;
+    }
+
+    .ov-main {
+        grid-template-columns:
+            minmax(0, 1.8fr)
+            minmax(0, 1fr);
+
+        gap: 14px;
+    }
+
+    .ov-panel {
+        padding: 16px;
+    }
+
+    .ov-panel-title {
+        font-size: 14px;
+    }
+
+    .ov-reco-list {
+        gap: 15px;
+    }
+
+    .ov-reco-icon {
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
+    }
+
+    .ov-reco-icon .ov-ico {
+        width: 17px;
+        height: 17px;
+    }
+
+    .ov-reco-body h3 {
+        font-size: 11px;
+    }
+
+    .ov-reco-body p {
+        font-size: 10px;
+    }
+
+    .ov-quick-art {
+        width: 78px;
+        height: 78px;
+        flex-basis: 78px;
+    }
+
+    .ov-quick-text {
+        font-size: 10px;
+    }
+
+    .ov-detail .ov-detail-table {
+        min-width: 880px;
+    }
+
+    .ov-detail .ov-detail-table th,
+    .ov-detail .ov-detail-table td {
+        padding: 11px 8px;
+        font-size: 10px;
+    }
+
+    .ov-detail .ov-detail-table th:nth-child(2) {
+        width: 155px;
+    }
+
+    .ov-detail .ov-detail-table th:nth-child(3) {
+        width: 105px;
+    }
+
+    .ov-detail .ov-detail-table th:nth-child(4) {
+        width: 110px;
+    }
+}
+
+/* =====================================================
+   23. SMALL LAPTOP
+   1000px - 1199px
+===================================================== */
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+
+    .ov-header {
+        gap: 10px;
+    }
+
+    .ov-stats {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 9px;
+        margin-bottom: 18px;
+    }
+
+    .ov-stat {
+        min-height: 105px;
+        gap: 6px;
+        padding: 13px 7px;
+    }
+
+    .ov-stat-title {
+        font-size: 10px;
+    }
+
+    .ov-stat strong {
+        font-size: 22px;
+    }
+
+    .ov-stat small {
+        font-size: 9px;
+    }
+
+    .ov-main {
+        grid-template-columns:
+            minmax(0, 1.6fr)
+            minmax(0, 1fr);
+
+        gap: 10px;
+    }
+
+    .ov-panel {
+        padding: 12px;
+    }
+
+    .ov-panel-title {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .ov-reco-list {
+        gap: 12px;
+    }
+
+    .ov-reco {
+        gap: 9px;
+    }
+
+    .ov-reco-icon {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+
+    .ov-reco-icon .ov-ico {
+        width: 16px;
+        height: 16px;
+    }
+
+    .ov-reco-body h3 {
+        font-size: 10px;
+    }
+
+    .ov-reco-body p {
+        font-size: 10px;
+    }
+
+    .ov-quick-art {
+        width: 70px;
+        height: 70px;
+        flex-basis: 70px;
+    }
+
+    .ov-quick-text {
+        font-size: 10px;
+    }
+
+    .ov-btn-block {
+        min-height: 33px;
+        font-size: 11px;
+    }
+
+    .ov-detail .ov-detail-table {
+        min-width: 850px;
+    }
+
+    .ov-detail .ov-detail-table th,
+    .ov-detail .ov-detail-table td {
+        padding: 10px 7px;
+        font-size: 10px;
+    }
+}
+
+/* =====================================================
+   24. TABLET
+   701px - 999px
+===================================================== */
+
+@media (min-width: 701px) and (max-width: 999px) {
+
+    .ov-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .ov-main {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ov-panel {
+        padding: 16px;
+    }
+
+    .ov-quick-art {
+        width: 85px;
+        height: 85px;
+        flex-basis: 85px;
+    }
+
+    .ov-reco-list {
+        gap: 15px;
+    }
+
+    .ov-detail .ov-detail-table {
+        min-width: 850px;
+    }
+
+    .ov-detail .ov-detail-table th,
+    .ov-detail .ov-detail-table td {
+        font-size: 10px;
+    }
+}
+
+/* =====================================================
+   25. MOBILE
+   MAX 700px
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .ov-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .ov-date {
+        min-height: 31px;
+        padding: 6px 10px;
+        font-size: 10px;
+    }
+
+    .ov-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+        margin-bottom: 16px;
+    }
+
+    .ov-stat {
+        min-height: 100px;
+        padding: 12px 7px;
+        gap: 6px;
+    }
+
+    .ov-stat-title {
+        font-size: 10px;
+    }
+
+    .ov-stat strong {
+        font-size: 21px;
+    }
+
+    .ov-stat small {
+        font-size: 9px;
+    }
+
+    .ov-main {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ov-panel {
+        padding: 13px;
+    }
+
+    .ov-panel-title {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .ov-reco-list {
+        gap: 13px;
+    }
+
+    .ov-reco {
+        gap: 10px;
+    }
+
+    .ov-reco-icon {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+
+    .ov-reco-body h3 {
+        font-size: 11px;
+    }
+
+    .ov-reco-body p {
+        font-size: 10px;
+    }
+
+    .ov-quick-art {
+        width: 75px;
+        height: 75px;
+        flex-basis: 75px;
+        margin-bottom: 12px;
+    }
+
+    .ov-quick-text {
+        font-size: 10px;
+    }
+
+    .ov-btn-sm {
+        font-size: 10px;
+        padding: 5px 10px;
+    }
+
+    .ov-btn-block {
+        min-height: 33px;
+        font-size: 11px;
+    }
+
+    .ov-detail .ov-btn-back {
+        min-height: 33px;
+        padding: 6px 11px;
+        font-size: 10px;
+    }
+
+    .ov-detail .page-subtitle {
+        margin-bottom: 14px;
+    }
+
+    .ov-detail .ov-detail-table {
+        min-width: 820px;
+    }
+
+    .ov-detail .ov-detail-table th,
+    .ov-detail .ov-detail-table td {
+        padding: 9px 6px;
+        font-size: 10px;
+    }
+
+    .ov-detail .ov-detail-table .rec-list li {
+        grid-template-columns:
+            95px minmax(0, 1fr);
+
+        gap: 6px;
+        font-size: 9px;
+    }
+
+    .ov-detail .ov-detail-table .rec-list .badge {
+        font-size: 9px;
+    }
+
+    .ov-detail .table-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* =====================================================
+   26. VERY SMALL SCREEN
+   MAX 420px
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .ov-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .ov-stat {
+        min-height: 90px;
+    }
+
+    .ov-reco {
+        align-items: flex-start;
+    }
+
+    .ov-reco-body {
+        flex: 1;
+    }
+
+    .ov-panel {
+        padding: 11px;
+    }
+}
+
+/* =====================================================
+   27. ACCESSIBILITY
+===================================================== */
+
+.ov-btn:focus-visible {
+    outline: 2px solid var(--ov-focus);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
