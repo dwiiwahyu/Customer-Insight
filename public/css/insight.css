@@ -1,96 +1,217 @@
-/* ================= KARTU RINGKASAN ================= */
+
+/* =====================================================
+   CUSTOMER INSIGHT - RINGKASAN INSIGHT
+   COMPACT RESPONSIVE PC & LAPTOP
+===================================================== */
+
+/* =====================================================
+   1. KARTU RINGKASAN
+===================================================== */
+
 .in-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 22px;
-    margin-top: 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+    margin-top: 22px;
+
+    width: 100%;
+    min-width: 0;
 }
 
+/* ===== STAT CARD ===== */
+
 .in-stat {
-    background: #fff;
+    min-width: 0;
+    min-height: 125px;
+
+    padding: 17px 15px;
+
+    background: #ffffff;
+
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 22px 22px 20px;
 }
+
+/* ===== STAT LABEL ===== */
 
 .in-stat span {
     display: block;
-    font-size: 16px;
+
+    font-size: 12px;
     font-weight: 600;
+    line-height: 1.4;
+
+    color: var(--text);
+    overflow-wrap: anywhere;
 }
+
+/* ===== STAT VALUE ===== */
 
 .in-stat strong {
     display: block;
-    margin: 10px 0 6px;
-    font-size: 34px;
+
+    margin: 9px 0 5px;
+
+    font-size: 27px;
     font-weight: 700;
-    color: #333;
+    line-height: 1.2;
+
+    color: #333333;
+    overflow-wrap: anywhere;
 }
+
+/* ===== VALUE UNIT ===== */
 
 .in-stat strong em {
-    font-size: 16px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    color: #666;
+
+    color: #666666;
 }
 
+/* ===== STAT DESCRIPTION ===== */
+
 .in-stat small {
-    font-size: 13px;
+    display: block;
+
+    font-size: 11px;
+    line-height: 1.45;
+
     color: var(--muted);
 }
 
-.in-stat .text-green  { color: #2ee045; }
-.in-stat .text-purple { color: #8e24aa; }
-.in-stat .text-red    { color: #e11d1d; }
+/* ===== TEXT COLORS ===== */
 
-/* ================= CHIP FILTER ================= */
+.in-stat .text-green {
+    color: #2ee045;
+}
+
+.in-stat .text-purple {
+    color: #8e24aa;
+}
+
+.in-stat .text-red {
+    color: #e11d1d;
+}
+
+/* =====================================================
+   2. CHIP FILTER
+===================================================== */
+
 .chips {
     display: flex;
-    gap: 10px;
+    align-items: center;
     flex-wrap: wrap;
-    margin-top: 30px;
+
+    gap: 8px;
+
+    width: 100%;
+    margin-top: 22px;
 }
 
+/* ===== CHIP BUTTON ===== */
+
 .chip {
-    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 32px;
+    padding: 6px 13px;
+
     border: 1px solid var(--border);
     border-radius: 20px;
-    background: #fff;
-    font-size: 14px;
-    font-weight: 600;
+
+    background: #ffffff;
     color: var(--text);
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease;
 }
+
+/* ===== CHIP HOVER ===== */
 
 .chip:hover {
     border-color: var(--red);
     color: var(--red);
 }
 
+/* ===== CHIP ACTIVE ===== */
+
 .chip.active {
     background: var(--red);
     border-color: var(--red);
-    color: #fff;
+    color: #ffffff;
 }
 
-/* ================= TABEL ================= */
-.chips + .table-wrap {
-    margin-top: 18px;
+.chip.active:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+    color: #ffffff;
 }
+
+/* ===== KEYBOARD FOCUS ===== */
+
+.chip:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   3. TABLE SPACING
+===================================================== */
+
+.chips + .table-wrap {
+    margin-top: 14px;
+}
+
+/* =====================================================
+   4. TABLE CELL ALIGNMENT
+===================================================== */
 
 .cell-left {
     text-align: left !important;
 }
 
+/* ===== NOTE BELOW CELL ===== */
+
 .cell-left small,
 .cell-note {
     display: block;
-    margin-top: 2px;
-    font-size: 12px;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.4;
+
     color: var(--muted);
 }
 
+/* =====================================================
+   5. CUSTOMER LINK
+===================================================== */
+
 .cust-link {
+    font-size: inherit;
     font-weight: 600;
+    line-height: 1.4;
+
+    text-decoration: none;
 }
 
 .cust-link:hover {
@@ -98,30 +219,408 @@
     text-decoration: underline;
 }
 
+/* =====================================================
+   6. RECOMMENDATION LIST
+===================================================== */
+
 .rec-list {
-    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    font-size: 14px;
-    line-height: 1.4;
+
+    gap: 7px;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    font-size: 11px;
+    line-height: 1.5;
 }
+
+/* ===== RECOMMENDATION ITEM ===== */
 
 .rec-list li {
     display: flex;
     align-items: flex-start;
-    gap: 10px;
+
+    gap: 8px;
+
+    min-width: 0;
 }
+
+/* ===== RECOMMENDATION BADGE ===== */
 
 .rec-list .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     flex-shrink: 0;
-    font-size: 12px;
-    padding: 4px 10px;
+
+    padding: 4px 8px;
+
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    border-radius: 5px;
+    white-space: nowrap;
 }
 
-/* ================= RESPONSIF ================= */
-@media (max-width: 1400px) {
+/* =====================================================
+   7. LARGE DESKTOP
+   MIN 1500px
+===================================================== */
+
+@media (min-width: 1500px) {
+
     .in-stats {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+        margin-top: 26px;
+    }
+
+    .in-stat {
+        min-height: 135px;
+        padding: 20px 18px;
+    }
+
+    .in-stat span {
+        font-size: 13px;
+    }
+
+    .in-stat strong {
+        font-size: 30px;
+    }
+
+    .in-stat strong em {
+        font-size: 13px;
+    }
+
+    .in-stat small {
+        font-size: 12px;
+    }
+
+    .chips {
+        gap: 10px;
+        margin-top: 26px;
+    }
+
+    .chip {
+        min-height: 34px;
+        padding: 7px 15px;
+        font-size: 13px;
+    }
+
+    .rec-list {
+        font-size: 12px;
+        gap: 9px;
+    }
+
+    .rec-list .badge {
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   8. LAPTOP
+   1200px - 1499px
+===================================================== */
+
+@media (min-width: 1200px) and (max-width: 1499px) {
+
+    .in-stats {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .in-stat {
+        min-height: 115px;
+        padding: 15px 12px;
+    }
+
+    .in-stat span {
+        font-size: 11px;
+    }
+
+    .in-stat strong {
+        font-size: 25px;
+        margin: 8px 0 4px;
+    }
+
+    .in-stat strong em {
+        font-size: 11px;
+    }
+
+    .in-stat small {
+        font-size: 10px;
+    }
+
+    .chips {
+        gap: 7px;
+        margin-top: 20px;
+    }
+
+    .chip {
+        min-height: 30px;
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+
+    .rec-list {
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .rec-list .badge {
+        padding: 3px 7px;
+        font-size: 10px;
+    }
+}
+
+/* =====================================================
+   9. SMALL LAPTOP
+   1000px - 1199px
+===================================================== */
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+
+    .in-stats {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 9px;
+        margin-top: 18px;
+    }
+
+    .in-stat {
+        min-height: 105px;
+        padding: 12px 9px;
+    }
+
+    .in-stat span {
+        font-size: 10px;
+    }
+
+    .in-stat strong {
+        margin: 7px 0 4px;
+        font-size: 22px;
+    }
+
+    .in-stat strong em {
+        font-size: 10px;
+    }
+
+    .in-stat small {
+        font-size: 9px;
+    }
+
+    .chips {
+        gap: 6px;
+        margin-top: 18px;
+    }
+
+    .chip {
+        min-height: 29px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .chips + .table-wrap {
+        margin-top: 12px;
+    }
+
+    .cell-left small,
+    .cell-note {
+        font-size: 10px;
+    }
+
+    .rec-list {
+        gap: 5px;
+        font-size: 10px;
+    }
+
+    .rec-list li {
+        gap: 6px;
+    }
+
+    .rec-list .badge {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+}
+
+/* =====================================================
+   10. TABLET
+   701px - 999px
+===================================================== */
+
+@media (min-width: 701px) and (max-width: 999px) {
+
+    .in-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .in-stat {
+        min-height: 110px;
+        padding: 14px 12px;
+    }
+
+    .in-stat span {
+        font-size: 11px;
+    }
+
+    .in-stat strong {
+        font-size: 24px;
+    }
+
+    .in-stat small {
+        font-size: 10px;
+    }
+
+    .chips {
+        gap: 7px;
+        margin-top: 18px;
+    }
+
+    .chip {
+        min-height: 30px;
+        padding: 6px 11px;
+        font-size: 11px;
+    }
+
+    .rec-list {
+        font-size: 10px;
+    }
+
+    .rec-list .badge {
+        font-size: 9px;
+    }
+}
+
+/* =====================================================
+   11. MOBILE
+   MAX 700px
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .in-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 9px;
+        margin-top: 16px;
+    }
+
+    .in-stat {
+        min-height: 100px;
+        padding: 12px 9px;
+    }
+
+    .in-stat span {
+        font-size: 10px;
+    }
+
+    .in-stat strong {
+        font-size: 21px;
+        margin: 6px 0 4px;
+    }
+
+    .in-stat strong em {
+        font-size: 10px;
+    }
+
+    .in-stat small {
+        font-size: 9px;
+    }
+
+    .chips {
+        gap: 6px;
+        margin-top: 16px;
+    }
+
+    .chip {
+        min-height: 28px;
+        padding: 5px 10px;
+        font-size: 10px;
+    }
+
+    .chips + .table-wrap {
+        margin-top: 12px;
+    }
+
+    .cell-left small,
+    .cell-note {
+        font-size: 9px;
+    }
+
+    .rec-list {
+        gap: 5px;
+        font-size: 10px;
+    }
+
+    .rec-list li {
+        gap: 6px;
+    }
+
+    .rec-list .badge {
+        padding: 3px 6px;
+        font-size: 9px;
+    }
+}
+
+/* =====================================================
+   12. VERY SMALL SCREEN
+   MAX 420px
+===================================================== */
+
+@media (max-width: 420px) {
+
+    .in-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .in-stat {
+        min-height: 90px;
+        padding: 12px;
+    }
+
+    .in-stat strong {
+        font-size: 23px;
+    }
+
+    .chips {
+        gap: 5px;
+    }
+
+    .chip {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .rec-list li {
+        flex-wrap: wrap;
+    }
+}
+
+/* =====================================================
+   13. ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
