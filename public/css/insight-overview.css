@@ -1368,3 +1368,44 @@
         font-size: 12px;
     }
 }
+
+
+/* ==========================================
+   SEJAJARKAN BADGE RISIKO & REKOMENDASI
+========================================== */
+
+/* Badge Tinggi tetap di tengah */
+.ov-detail .ov-detail-table td:nth-child(5) {
+    vertical-align: middle;
+}
+
+/* Seluruh bagian rekomendasi di tengah vertikal */
+.ov-detail .ov-detail-table td:nth-child(6) {
+    vertical-align: middle;
+}
+
+/* Rekomendasi tetap rata kiri */
+.ov-detail .ov-detail-table .rec-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+}
+
+/* Badge dan deskripsi tetap sejajar horizontal */
+.ov-detail .ov-detail-table .rec-list li {
+    display: grid;
+    grid-template-columns: 125px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 12px;
+}
+
+/* Badge Risiko Churn berada di tengah teks */
+.ov-detail .ov-detail-table .rec-list .badge {
+    align-self: center;
+    justify-self: start;
+    margin: 0;
+}
