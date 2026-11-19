@@ -518,13 +518,7 @@ a {
     /* Judul halaman */
     .page-title { font-size: 26px; }
     .page-subtitle { font-size: 15px; }
-
-    /* Tabel: bisa digeser ke samping, tidak merusak halaman */
-    .content .table-wrap {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-    .content .data-table { min-width: 720px; }
+    /* Footer tabel (pagination) boleh turun baris */
     .content .table-footer {
         flex-wrap: wrap;
         gap: 10px;
