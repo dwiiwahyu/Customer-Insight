@@ -36,6 +36,8 @@
     gap: 16px;
     margin-bottom: 24px;
 }
+/* Tabel Rekomendasi Lengkap lebih ringkas dari tabel pelanggan */
+.ov-full-table { min-width: 760px; }
 .ov-stat {
     display: flex;
     flex-direction: column;
