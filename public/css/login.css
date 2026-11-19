@@ -1,386 +1,788 @@
 
+/* =====================================================
+   CUSTOMER INSIGHT
+   GLOBAL LAYOUT - RESPONSIVE PC & LAPTOP
+===================================================== */
+
+/* ===== RESET ===== */
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 :root {
     --red: #ee2e24;
-    --white: #ffffff;
+    --red-dark: #c4241c;
+    --bg: #f4f4f4;
+    --text: #111111;
+    --muted: #555555;
+    --border: #d9d9d9;
+
+    --sidebar-w: 220px;
+    --page-gutter: 22px;
 }
 
-html,
+html {
+    min-width: 320px;
+    font-size: 14px;
+}
+
 body {
+    margin: 0;
+    min-height: 100vh;
     width: 100%;
-    min-height: 100%;
-}
 
-body {
     font-family: 'Inter', sans-serif;
-    min-height: 100vh;
+    font-size: 14px;
+
+    background: var(--bg);
+    color: var(--text);
 }
 
-/* ===== HALAMAN LOGIN ===== */
-
-.login-page {
-    display: flex;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-/* ===== SISI KIRI ===== */
-
-
-.login-left {
-    flex: 0 0 45%;
-    width: 45%;
-    min-width: 0;
-    position: relative;
-    background: var(--white);
-
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Logo di tengah horizontal */
-
-    padding: clamp(55px, 8vh, 90px) 0 0;
-    overflow: hidden;
+button,
+input,
+select,
+textarea {
+    font: inherit;
 }
 
-/* Logo Telkom */
-
-.login-logo {
-    position: relative;
-    z-index: 2;
-
-    width: clamp(200px, 17vw, 290px);
-    max-width: 85%;
-    height: auto;
-
-    object-fit: contain;
-
-    margin: 0 auto;
-    display: block;
+img,
+svg {
+    max-width: 100%;
 }
 
-/* Ilustrasi */
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
-.login-illustration {
-    position: absolute;
+.sidebar {
+    position: fixed;
+    z-index: 100;
+
+    top: 0;
     left: 0;
     bottom: 0;
 
-    width: 100%;
-    height: 68%;
+    width: var(--sidebar-w);
 
-    object-fit: contain;
-    object-position: bottom left;
+    padding: 24px 14px;
 
-    display: block;
-}
-
-/* ===== SISI KANAN ===== */
-
-.login-right {
-    flex: 1;
-    min-width: 0;
     background: var(--red);
 
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* ===== BRAND ===== */
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 0 8px;
+    margin: 0 0 34px;
+
+    color: #ffffff;
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 
-    padding: 45px clamp(40px, 6vw, 100px);
+    border-radius: 9px;
+    background: rgba(255,255,255,0.25);
 }
 
-/* Container Form */
-
-.login-form {
-    width: 100%;
-    max-width: 500px;
-    color: var(--white);
+.brand-logo svg {
+    width: 26px;
+    height: 26px;
 }
 
-/* Judul */
-
-.login-form h1 {
-    font-size: clamp(27px, 2.1vw, 34px);
+.brand-text {
+    font-size: 15px;
     font-weight: 700;
     line-height: 1.25;
-    margin-bottom: 4px;
 }
 
-/* Subtitle */
+/* ===== MENU SIDEBAR ===== */
 
-.login-subtitle {
-    font-size: clamp(13px, 1vw, 16px);
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0 0 45px;
-}
-
-/* Label */
-
-.login-form label {
+.sidebar-menu a {
     display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
 
-/* Input */
+    padding: 13px 14px;
+    margin-bottom: 6px;
 
-.login-form input[type="text"],
-.login-form input[type="email"],
-.login-form input[type="password"] {
-    width: 100%;
-    height: 46px;
+    border-radius: 8px;
 
-    border: none;
-    border-radius: 0;
-    outline: none;
+    color: #ffffff;
 
-    padding: 0 14px;
-
-    font-family: inherit;
     font-size: 13px;
-    color: #333;
-    background: var(--white);
+    font-weight: 600;
+    line-height: 1.4;
 
-    margin-bottom: 26px;
+    transition: background 0.15s ease;
 }
 
-.login-form input::placeholder {
-    color: #888;
+.sidebar-menu a:hover {
+    background: rgba(0,0,0,0.12);
 }
 
-.login-form input:focus {
-    box-shadow: 0 0 0 2px rgba(255,255,255,0.4);
+.sidebar-menu a.active {
+    background: var(--red-dark);
 }
 
-/* ===== PASSWORD ===== */
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
 
-.password-wrap {
-    position: relative;
+.main {
+    width: calc(100% - var(--sidebar-w));
+    min-width: 0;
+    min-height: 100vh;
+
+    margin-left: var(--sidebar-w);
+
+    padding: 20px var(--page-gutter) 36px;
 }
 
-.password-wrap input {
-    padding-right: 48px !important;
+.content {
+    width: 100%;
+    min-width: 0;
+    margin-top: 28px;
 }
 
-.toggle-password {
-    position: absolute;
-    right: 12px;
-    top: 9px;
-
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border: none;
-    background: transparent;
-    color: #777;
-
-    cursor: pointer;
+.content > *,
+.main > * {
+    min-width: 0;
+    max-width: 100%;
 }
 
-.toggle-password .eye-slash {
-    display: block;
+/* ===== PAGE TITLE ===== */
+
+.page-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    overflow-wrap: anywhere;
 }
 
-.toggle-password.is-visible .eye-slash {
-    display: none;
+.page-subtitle {
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.5;
 }
 
-/* ===== REMEMBER & FORGOT ===== */
+/* =====================================================
+   TOPBAR
+===================================================== */
 
-.login-options {
+.topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 14px;
 
-    margin-top: -5px;
+    min-width: 0;
 }
 
-.login-form .remember {
+/* ===== SEARCH ===== */
+
+.topbar-search {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 
-    margin: 0;
+    flex: 1 1 280px;
+
+    min-width: 0;
+    max-width: 480px;
+
+    height: 44px;
+    padding: 0 13px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    color: #777777;
+}
+
+.topbar-search input {
+    width: 100%;
+    min-width: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
 
     font-size: 12px;
-    font-weight: 500;
+    color: var(--text);
+}
+
+.topbar-search input::placeholder {
+    color: #888888;
+}
+
+/* ===== TOPBAR ACTIONS ===== */
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex: 0 0 auto;
+}
+
+/* ===== ICON BUTTON ===== */
+
+.icon-btn {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--red);
+    color: #ffffff;
 
     cursor: pointer;
 }
 
-.remember input {
-    width: 14px;
-    height: 14px;
-
-    margin: 0;
-    accent-color: #c4241c;
+.icon-btn svg {
+    width: 22px;
+    height: 22px;
 }
 
-.forgot {
-    color: var(--white);
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
+.icon-btn:hover,
+.user-btn:hover {
+    background: var(--red-dark);
+}
+
+/* =====================================================
+   USER PROFILE
+===================================================== */
+
+.user-menu,
+.notif-menu {
+    position: relative;
+}
+
+.user-btn {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    min-width: 180px;
+    max-width: 220px;
+
+    height: 44px;
+
+    padding: 0 10px 0 7px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: var(--red);
+    color: #ffffff;
+
+    cursor: pointer;
+    text-align: left;
+}
+
+/* ===== AVATAR ===== */
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: var(--red);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ===== USER INFO ===== */
+
+.user-info {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+
+    line-height: 1.25;
+}
+
+.user-info strong,
+.user-info small {
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.forgot:hover {
-    text-decoration: underline;
+.user-info strong {
+    font-size: 12px;
+    font-weight: 600;
 }
 
-/* ===== TOMBOL MASUK ===== */
+.user-info small {
+    font-size: 10px;
+}
 
-.btn-login {
+/* =====================================================
+   DROPDOWN
+===================================================== */
+
+.user-dropdown,
+.nd-dropdown {
+    display: none;
+
+    position: absolute;
+    z-index: 150;
+
+    top: calc(100% + 8px);
+    right: 0;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+
+    overflow: hidden;
+}
+
+.user-dropdown {
+    width: 100%;
+}
+
+.user-dropdown.show,
+.nd-dropdown.show {
     display: block;
+}
 
-    width: 67%;
-    height: 42px;
-
-    margin: 42px auto 0;
+.user-dropdown button {
+    width: 100%;
+    padding: 13px 16px;
 
     border: none;
-    border-radius: 6px;
+    background: none;
 
-    background: var(--white);
     color: var(--red);
 
-    font-family: inherit;
-    font-size: 14px;
+    text-align: left;
     font-weight: 600;
 
     cursor: pointer;
-
-    transition:
-        transform 0.15s ease,
-        box-shadow 0.15s ease;
 }
 
-.btn-login:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 5px 14px rgba(0,0,0,0.15);
+.user-dropdown button:hover {
+    background: #fdecea;
 }
 
-/* ===== PESAN ERROR ===== */
+/* =====================================================
+   NOTIFICATION
+===================================================== */
 
-.login-alert {
-    background: rgba(255,255,255,0.95);
-    color: #b3150d;
+.notif-badge {
+    position: absolute;
+
+    top: -4px;
+    right: -4px;
+
+    min-width: 21px;
+    height: 21px;
+
+    padding: 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid var(--red);
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: var(--red);
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.nd-dropdown {
+    width: 360px;
+    max-width: calc(100vw - 24px);
+}
+
+.nd-head {
+    padding: 13px 16px;
+    border-bottom: 1px solid #eeeeee;
+
+    font-weight: 700;
+}
+
+.nd-list {
+    max-height: min(400px, 55vh);
+    overflow-y: auto;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nd-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 12px 16px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.nd-item:hover {
+    background: #fff3f3;
+}
+
+.nd-item strong,
+.nd-item small {
+    display: block;
+}
+
+.nd-item strong {
+    font-size: 13px;
+}
+
+.nd-item small {
+    margin-top: 3px;
+
+    color: #555555;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.nd-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+
+    margin-top: 5px;
+    border-radius: 50%;
+}
+
+.nd-red {
+    background: #ee3a3a;
+}
+
+.nd-orange {
+    background: #f7a23b;
+}
+
+.nd-blue {
+    background: #3b82f6;
+}
+
+.nd-empty {
+    padding: 24px 16px;
+    text-align: center;
+
+    color: var(--muted);
+}
+
+.nd-foot {
+    display: block;
+    padding: 12px;
+
+    color: var(--red);
+    text-align: center;
 
     font-size: 13px;
-    font-weight: 500;
-
-    padding: 10px 14px;
-    border-radius: 5px;
-
-    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.field-error {
-    display: block;
-    margin: -20px 0 18px;
-    font-size: 12px;
+.nd-foot:hover {
+    background: #fdecea;
 }
 
-/* ===== LAPTOP ===== */
+/* =====================================================
+   NAVIGATION BEHAVIOR
+===================================================== */
 
-@media (max-width: 1400px) and (min-width: 901px) {
-
-    .login-left {
-        padding-top: 65px;
-    }
-
-    .login-logo {
-        width: clamp(190px, 18vw, 270px);
-    }
-
-    .login-illustration {
-        height: 67%;
-    }
-
-    .login-right {
-        padding: 35px 6%;
-    }
-
-    .login-form {
-        max-width: 460px;
-    }
-
-    .login-subtitle {
-        margin-bottom: 38px;
-    }
+.mobile-menu-btn,
+.sidebar-backdrop {
+    display: none !important;
 }
 
-/* ===== TABLET & MOBILE ===== */
+body.sidebar-open .sidebar {
+    transform: none !important;
+}
 
-@media (max-width: 900px) {
+/* =====================================================
+   LARGE DESKTOP
+===================================================== */
 
-    .login-left {
-        display: none;
+@media (min-width: 1500px) {
+    :root {
+        --sidebar-w: 230px;
+        --page-gutter: 26px;
     }
 
-    .login-right {
-        min-height: 100vh;
-        min-height: 100dvh;
-        padding: 40px 28px;
+    .sidebar {
+        padding: 26px 16px;
     }
 
-    .login-form {
-        max-width: 440px;
+    .sidebar-menu a {
+        padding: 14px;
+        font-size: 14px;
     }
 
-    .login-form h1 {
-        font-size: 30px;
-    }
-
-    .btn-login {
-        width: 100%;
+    .content {
+        margin-top: 30px;
     }
 }
 
-/* ===== MOBILE KECIL ===== */
+/* =====================================================
+   LAPTOP
+===================================================== */
 
-@media (max-width: 480px) {
-
-    .login-right {
-        padding: 30px 22px;
+@media (min-width: 901px) and (max-width: 1200px) {
+    :root {
+        --sidebar-w: 200px;
+        --page-gutter: 18px;
     }
 
-    .login-form h1 {
-        font-size: 27px;
+    .sidebar {
+        padding: 22px 10px;
     }
 
-    .login-subtitle {
+    .sidebar-brand {
+        gap: 8px;
+    }
+
+    .brand-logo {
+        width: 38px;
+        height: 38px;
+        flex-basis: 38px;
+    }
+
+    .brand-logo svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .brand-text {
         font-size: 13px;
-        margin-bottom: 35px;
     }
 
-    .login-form input[type="text"],
-    .login-form input[type="email"],
-    .login-form input[type="password"] {
-        height: 44px;
+    .sidebar-menu a {
+        padding: 12px 10px;
+        font-size: 12px;
     }
 
-    .login-options {
+    .main {
+        padding-top: 18px;
+    }
+
+    .topbar {
         gap: 10px;
     }
 
-    .forgot {
-        font-size: 11px;
+    .topbar-search {
+        max-width: 380px;
     }
 
-    .btn-login {
-        margin-top: 35px;
+    .topbar-actions {
+        gap: 7px;
+    }
+
+    .user-btn {
+        min-width: 150px;
+        max-width: 185px;
+    }
+
+    .content {
+        margin-top: 24px;
+    }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+    :root {
+        --sidebar-w: 180px;
+        --page-gutter: 14px;
+    }
+
+    .sidebar {
+        width: var(--sidebar-w);
+        padding: 20px 10px;
+    }
+
+    .sidebar-brand {
+        gap: 6px;
+        padding: 0 4px;
+    }
+
+    .brand-logo {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .brand-text {
+        font-size: 12px;
+    }
+
+    .sidebar-menu a {
+        padding: 12px 9px;
+        font-size: 12px;
+    }
+
+    .main {
+        width: calc(100% - var(--sidebar-w));
+        margin-left: var(--sidebar-w);
+
+        padding: 16px var(--page-gutter) 26px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .topbar-search {
+        max-width: none;
+        flex: 1 1 220px;
+    }
+
+    .topbar-actions {
+        margin-left: auto;
+    }
+
+    .content {
+        margin-top: 22px;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+   Sidebar tetap, sesuai kebutuhan project
+===================================================== */
+
+@media (max-width: 560px) {
+    :root {
+        --sidebar-w: 125px;
+        --page-gutter: 10px;
+    }
+
+    .sidebar {
+        padding: 18px 6px;
+    }
+
+    .sidebar-brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        padding: 0 4px;
+    }
+
+    .brand-logo {
+        width: 32px;
+        height: 32px;
+        flex-basis: 32px;
+    }
+
+    .brand-text {
+        font-size: 10px;
+    }
+
+    .sidebar-menu a {
+        padding: 10px 6px;
+        font-size: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    .main {
+        padding-top: 12px;
+    }
+
+    .page-title {
+        font-size: 22px;
+    }
+
+    .topbar-search {
+        flex-basis: 100%;
+    }
+
+    .user-btn {
+        min-width: 44px;
+        width: 44px;
+        padding: 0 6px;
+    }
+
+    .user-info,
+    .user-caret {
+        display: none;
+    }
+
+    .icon-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .user-avatar {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+
+    .nd-dropdown {
+        max-width: calc(100vw - var(--sidebar-w) - 20px);
+    }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
