@@ -302,13 +302,13 @@
 /* ===== DANGER ICON ===== */
 
 .icon-danger {
-    background: #ffb3b0;
+    background: #ee3a3a;
     color: #ffffff;
 
     font-size: 20px;
     font-weight: 700;
 
-    box-shadow: inset 0 0 0 5px #ee3a3a;
+    box-shadow: inset 0 0 0 5px #ffb3b0;
 }
 
 /* ===== INFO ICON ===== */
