@@ -444,8 +444,14 @@
     vertical-align: middle;
 }
 
+/* Kolom Judul Rekomendasi rata kiri */
+.ov-full-table th:nth-child(2),
+.ov-full-table td:nth-child(2) {
+    text-align: left !important;
+}
+
 .ov-full-table tbody tr:nth-child(odd) {
-    background: #fdeeee;
+    background: #fff5f5;
 }
 
 .ov-full-table tbody tr:nth-child(even) {
@@ -648,7 +654,7 @@
 ===================================================== */
 
 .ov-detail .ov-detail-table tbody tr:nth-child(odd) {
-    background: #fdeeee;
+    background: #fff5f5;
 }
 
 .ov-detail .ov-detail-table tbody tr:nth-child(even) {
@@ -1293,5 +1299,72 @@
     *::after {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
+    }
+}
+
+
+/* ==========================================
+   FONT TABEL REKOMENDASI SERAGAM
+========================================== */
+
+/* Header dan isi tabel */
+.ov-detail .ov-detail-table th,
+.ov-detail .ov-detail-table td {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Nama pelanggan */
+.ov-detail .ov-detail-table .cust-link {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Kode pelanggan */
+.ov-detail .ov-detail-table td small,
+.ov-detail .ov-detail-table .ov-desc {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* Teks rekomendasi */
+.ov-detail .ov-detail-table .rec-list li {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Semua badge tabel */
+.ov-detail .ov-detail-table td .badge,
+.ov-detail .ov-detail-table td [class*="badge"] {
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+/* Tombol Lihat Detail */
+.ov-detail .ov-detail-table td .ov-btn,
+.ov-detail .ov-detail-table td .ov-btn-sm {
+    font-size: 11px;
+    font-weight: 600;
+    min-height: 30px;
+    padding: 5px 12px;
+}
+
+/* Tombol aksi dengan class berbeda */
+.ov-detail .ov-detail-table td:last-child a,
+.ov-detail .ov-detail-table td:last-child button {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Ukuran tetap konsisten di laptop */
+@media (max-width: 1199px) {
+    .ov-detail .ov-detail-table th,
+    .ov-detail .ov-detail-table td,
+    .ov-detail .ov-detail-table .cust-link,
+    .ov-detail .ov-detail-table .rec-list li {
+        font-size: 12px;
     }
 }
