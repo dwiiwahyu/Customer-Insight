@@ -402,3 +402,28 @@
 .modal-box .modal-hint {
     margin-top: 0;
 }
+/* ================= RESPONSIF TAMBAHAN (HP) ================= */
+@media (max-width: 640px) {
+    .page-head { flex-wrap: wrap; }
+    .btn-add { margin-top: 16px; }
+    .add-menu { margin-top: 16px; }
+
+    /* Dropdown "Tambah" dibuka ke kanan supaya tidak keluar layar */
+    .add-dropdown { right: auto; left: 0; }
+
+    .filter-bar { margin-top: 18px; gap: 10px; }
+    .filter-search { height: 46px; min-width: 0; }
+    .filter-select {
+        flex: 1 1 140px;
+        min-width: 0;
+        height: 46px;
+    }
+
+    .table-footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .pagination { flex-wrap: wrap; }
+
+    .modal-box { padding: 20px; }
+}
