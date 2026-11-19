@@ -113,8 +113,9 @@ img, svg { max-width: 100%; }
 .nd-foot { display: block; padding: 12px; color: var(--red); text-align: center; font-size: 13px; font-weight: 600; }
 .nd-foot:hover { background: #fdecea; }
 
-/* Mobile navigation controls */
-.mobile-menu-btn, .sidebar-backdrop { display: none; }
+/* Desktop & laptop only: sidebar is always visible; no hamburger navigation */
+.mobile-menu-btn, .sidebar-backdrop { display: none !important; }
+body.sidebar-open .sidebar { transform: none !important; }
 
 @media (min-width: 1500px) {
     :root { --sidebar-w: 290px; --page-gutter: 40px; }
@@ -133,29 +134,53 @@ img, svg { max-width: 100%; }
     .user-btn { min-width: 52px; width: 52px; }
     .user-info, .user-caret { display: none; }
 }
+/* Laptop widths: keep the sidebar fixed and reduce spacing gently */
+@media (max-width: 1200px) and (min-width: 901px) {
+    :root { --sidebar-w: 230px; --page-gutter: 22px; }
+    .sidebar { padding: 28px 14px; }
+    .brand-logo { width: 46px; height: 46px; flex-basis: 46px; }
+    .brand-logo svg { width: 28px; height: 28px; }
+    .brand-text { font-size: 17px; }
+    .sidebar-menu a { padding: 14px 12px; font-size: 14px; }
+    .main { padding-top: 20px; }
+    .topbar { gap: 12px; }
+    .topbar-search { flex-basis: 260px; }
+    .user-btn { min-width: 185px; }
+    .content { margin-top: 26px; }
+}
+
+/* At laptop/desktop sizes, do not switch to off-canvas navigation */
 @media (max-width: 900px) {
-    .sidebar { width: min(290px, 84vw); transform: translateX(-105%); transition: transform .22s ease; box-shadow: 8px 0 28px rgba(0,0,0,.16); }
-    body.sidebar-open .sidebar { transform: translateX(0); }
-    .sidebar-backdrop { display: block; position: fixed; z-index: 90; inset: 0; background: rgba(0,0,0,.38); opacity: 0; visibility: hidden; transition: .2s; }
-    body.sidebar-open .sidebar-backdrop { opacity: 1; visibility: visible; }
-    .main { width: 100%; margin-left: 0; padding: 16px 20px 32px; }
-    .mobile-menu-btn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; border: 0; border-radius: 9px; background: var(--red); color: #fff; cursor: pointer; }
-    .topbar { flex-wrap: wrap; gap: 12px; }
-    .topbar-search { order: 3; flex: 1 0 100%; max-width: none; }
+    .sidebar {
+        position: fixed;
+        inset: 0 auto 0 0;
+        width: 210px;
+        transform: none !important;
+        box-shadow: none;
+    }
+    .main {
+        width: calc(100% - 210px);
+        margin-left: 210px;
+        padding: 16px 16px 30px;
+    }
+    .mobile-menu-btn, .sidebar-backdrop { display: none !important; }
+    .topbar { flex-wrap: wrap; gap: 10px; }
+    .topbar-search { order: 0; flex: 1 1 220px; max-width: none; }
     .topbar-actions { margin-left: auto; }
     .content { margin-top: 24px; }
 }
-@media (max-width: 600px) {
-    .main { padding: 12px 14px 26px; }
-    .topbar { gap: 10px; }
+
+/* Prevent oversized controls and keep the page within the viewport */
+@media (max-width: 1100px) {
     .topbar-actions { gap: 8px; }
-    .icon-btn { width: 42px; height: 42px; }
-    .user-btn { min-width: 42px; width: 42px; height: 42px; justify-content: center; padding: 2px; }
-    .user-avatar { width: 34px; height: 34px; flex-basis: 34px; }
-    .user-info, .user-caret { display: none; }
-    .topbar-search { height: 46px; padding: 0 12px; }
-    .page-title { font-size: 24px; }
-    .page-subtitle { font-size: 14px; }
-    .content { margin-top: 20px; }
+    .icon-btn { width: 44px; height: 44px; }
+    .user-btn { min-width: 170px; max-width: 210px; }
+    .user-info strong { font-size: 13px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+/* Final safeguard: this project targets PC and laptop layouts */
+@media (min-width: 320px) {
+    .sidebar { transform: none !important; }
+    .mobile-menu-btn, .sidebar-backdrop { display: none !important; }
+}
