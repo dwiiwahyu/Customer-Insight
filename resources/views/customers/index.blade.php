@@ -64,7 +64,7 @@
                 <circle cx="11" cy="11" r="7"/>
                 <line x1="21" y1="21" x2="16.5" y2="16.5"/>
             </svg>
-            <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari NIPNAS, nama, atau nomor akun">
+            <input type="text" name="q" value="{{ request('q') }}" placeholder="Cari NIPNAS, nama, atau nomor akun...">
         </div>
 
         <select name="product_group" class="filter-select">
