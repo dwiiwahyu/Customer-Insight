@@ -402,28 +402,44 @@
 .modal-box .modal-hint {
     margin-top: 0;
 }
-/* ================= RESPONSIF TAMBAHAN (HP) ================= */
-@media (max-width: 640px) {
-    .page-head { flex-wrap: wrap; }
-    .btn-add { margin-top: 16px; }
-    .add-menu { margin-top: 16px; }
+/* =========================================================
+   RESPONSIVE OVERRIDES — halaman daftar pelanggan
+   ========================================================= */
+.page-head { flex-wrap: wrap; align-items: center; }
+.page-head > * { min-width: 0; }
+.filter-bar { display: grid; grid-template-columns: minmax(220px, 1.6fr) repeat(5, minmax(135px, 1fr)); gap: 12px; }
+.filter-search { width: 100%; min-width: 0; }
+.filter-select { width: 100%; min-width: 0; }
+.table-wrap { width: 100%; max-width: 100%; min-width: 0; overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; border-radius: 8px; }
+.data-table { min-width: 1050px; }
+.table-footer { flex-wrap: wrap; min-width: 0; }
+.pagination { flex-wrap: wrap; }
 
-    /* Dropdown "Tambah" dibuka ke kanan supaya tidak keluar layar */
-    .add-dropdown { right: auto; left: 0; }
-
-    .filter-bar { margin-top: 18px; gap: 10px; }
-    .filter-search { height: 46px; min-width: 0; }
-    .filter-select {
-        flex: 1 1 140px;
-        min-width: 0;
-        height: 46px;
-    }
-
-    .table-footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .pagination { flex-wrap: wrap; }
-
-    .modal-box { padding: 20px; }
+@media (max-width: 1250px) {
+    .filter-bar { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .filter-search { grid-column: 1 / -1; }
+}
+@media (max-width: 760px) {
+    .page-head { align-items: flex-start; }
+    .btn-add, .add-menu { margin-top: 0; }
+    .filter-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
+    .filter-search { grid-column: 1 / -1; height: 48px; }
+    .filter-select { height: 48px; padding-left: 12px; padding-right: 30px; font-size: 13px; }
+    .data-table { min-width: 1000px; }
+    .data-table th, .data-table td { padding: 13px 10px; font-size: 13px; }
+    .table-footer { align-items: flex-start; flex-direction: column; }
+    .pagination { max-width: 100%; }
+    .modal { padding: 12px; }
+    .modal-box { max-height: calc(100dvh - 24px); overflow-y: auto; padding: 20px; }
+    .modal-actions { flex-wrap: wrap; }
+}
+@media (max-width: 420px) {
+    .page-head { flex-direction: column; }
+    .btn-add { width: 100%; justify-content: center; }
+    .add-menu { width: 100%; }
+    .add-menu .btn-add { width: 100%; }
+    .filter-bar { grid-template-columns: 1fr; }
+    .filter-search { grid-column: auto; }
+    .filter-select { width: 100%; }
+    .modal-actions > button { flex: 1 1 100%; }
 }
