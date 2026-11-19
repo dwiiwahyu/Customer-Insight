@@ -1,100 +1,643 @@
-/* ================= TOMBOL KEMBALI ================= */
+
+/* =====================================================
+   CUSTOMER INSIGHT - FORM TAMBAH PELANGGAN
+   COMPACT RESPONSIVE PC & LAPTOP
+===================================================== */
+
+/* =====================================================
+   1. TOMBOL KEMBALI
+===================================================== */
+
 .btn-back {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    height: 44px;
-    padding: 0 22px;
-    margin-bottom: 22px;
-    border-radius: 8px;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 38px;
+    padding: 0 16px;
+    margin-bottom: 18px;
+
+    border: none;
+    border-radius: 7px;
+
     background: var(--red);
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: background 0.15s ease;
 }
 
 .btn-back:hover {
     background: var(--red-dark);
+    color: #ffffff;
 }
 
-/* ================= FORM ================= */
+.btn-back:focus-visible {
+    outline: 2px solid var(--red-dark);
+    outline-offset: 3px;
+}
+
+/* =====================================================
+   2. FORM WRAPPER
+===================================================== */
+
 .form-wrap {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    margin-top: 28px;
+
+    width: 100%;
+    min-width: 0;
+
+    gap: 18px;
+    margin-top: 22px;
 }
+
+/* =====================================================
+   3. FORM PANEL
+===================================================== */
 
 .form-panel {
-    background: #fff;
+    width: 100%;
+    min-width: 0;
+
+    padding: 20px 22px 24px;
+
+    background: #ffffff;
+
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 24px 28px 30px;
 }
 
+/* Judul setiap panel */
+
 .form-panel h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
+    margin: 0 0 18px;
+
+    font-size: 18px;
     font-weight: 700;
+    line-height: 1.3;
+
+    color: var(--text);
 }
+
+/* =====================================================
+   4. FORM GRID
+===================================================== */
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 28px;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 22px;
+    row-gap: 16px;
+
+    width: 100%;
+    min-width: 0;
 }
+
+/* =====================================================
+   5. FORM FIELD
+===================================================== */
+
+.field {
+    min-width: 0;
+}
+
+/* Label */
 
 .field label {
     display: block;
+
     margin-bottom: 6px;
-    font-size: 14px;
+
+    font-size: 12px;
     font-weight: 600;
+    line-height: 1.4;
+
+    color: var(--text);
 }
+
+/* Tanda wajib diisi */
 
 .field label b {
     color: var(--red);
+    font-weight: 700;
 }
+
+/* =====================================================
+   6. INPUT DAN SELECT
+===================================================== */
 
 .field input,
 .field select {
+    display: block;
+
     width: 100%;
-    height: 46px;
-    padding: 0 14px;
+    min-width: 0;
+    height: 40px;
+
+    padding: 0 12px;
+
     border: 1px solid var(--border);
-    border-radius: 8px;
-    background: #fff;
-    font-family: inherit;
-    font-size: 15px;
+    border-radius: 7px;
+
+    background: #ffffff;
     color: var(--text);
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+
     outline: none;
+
+    transition:
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
+/* Placeholder */
+
+.field input::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+/* Focus */
 
 .field input:focus,
 .field select:focus {
     border-color: var(--red);
-    box-shadow: 0 0 0 3px rgba(238, 46, 36, 0.15);
+
+    box-shadow:
+        0 0 0 2px rgba(238, 46, 36, 0.12);
 }
+
+/* Disabled */
+
+.field input:disabled,
+.field select:disabled {
+    background: #f5f5f5;
+    color: #888888;
+    cursor: not-allowed;
+}
+
+/* Select */
+
+.field select {
+    cursor: pointer;
+}
+
+/* Input tanggal */
+
+.field input[type="date"] {
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* Input number */
+
+.field input[type="number"] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+.field input[type="number"]::-webkit-inner-spin-button,
+.field input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* =====================================================
+   7. TEXTAREA (JIKA ADA)
+===================================================== */
+
+.field textarea {
+    display: block;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 90px;
+
+    padding: 11px 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background: #ffffff;
+    color: var(--text);
+
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 1.5;
+
+    outline: none;
+    resize: vertical;
+}
+
+.field textarea:focus {
+    border-color: var(--red);
+    box-shadow:
+        0 0 0 2px rgba(238, 46, 36, 0.12);
+}
+
+/* =====================================================
+   8. FIELD ERROR
+===================================================== */
 
 .field-error {
     display: block;
+
     margin-top: 5px;
-    font-size: 13px;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+
     color: #c0201a;
 }
 
-.form-check {
-    padding: 4px 4px 0;
+/* Input error jika menggunakan aria-invalid */
+
+.field input[aria-invalid="true"],
+.field select[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+    border-color: #c0201a;
 }
+
+/* =====================================================
+   9. CHECKBOX AREA
+===================================================== */
+
+.form-check {
+    padding: 4px 2px 0;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.form-check label {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    font-size: 12px;
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+.form-check input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+
+    flex: 0 0 16px;
+    margin: 2px 0 0;
+
+    accent-color: var(--red);
+    cursor: pointer;
+}
+
+/* =====================================================
+   10. FORM ACTIONS
+===================================================== */
 
 .form-actions {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
-    gap: 12px;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    width: 100%;
+    margin-top: 4px;
 }
 
-/* ================= RESPONSIF ================= */
-@media (max-width: 900px) {
+/* Tombol umum di area aksi form */
+
+.form-actions button,
+.form-actions a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 0 18px;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Fokus keyboard */
+
+.form-actions button:focus-visible,
+.form-actions a:focus-visible {
+    outline: 2px solid var(--red);
+    outline-offset: 2px;
+}
+
+/* =====================================================
+   11. RESPONSIVE LARGE DESKTOP
+   MIN 1500px
+===================================================== */
+
+@media (min-width: 1500px) {
+
+    .form-wrap {
+        gap: 22px;
+        margin-top: 26px;
+    }
+
+    .form-panel {
+        padding: 24px 28px 28px;
+    }
+
+    .form-panel h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .form-grid {
+        column-gap: 28px;
+        row-gap: 20px;
+    }
+
+    .field label {
+        font-size: 13px;
+    }
+
+    .field input,
+    .field select {
+        height: 44px;
+        font-size: 13px;
+    }
+
+    .field textarea {
+        font-size: 13px;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        min-height: 42px;
+        font-size: 13px;
+    }
+}
+
+/* =====================================================
+   12. RESPONSIVE LAPTOP
+   1100px - 1499px
+===================================================== */
+
+@media (min-width: 1100px) and (max-width: 1499px) {
+
+    .form-wrap {
+        gap: 16px;
+        margin-top: 20px;
+    }
+
+    .form-panel {
+        padding: 18px 20px 22px;
+    }
+
+    .form-panel h2 {
+        font-size: 17px;
+        margin-bottom: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        column-gap: 20px;
+        row-gap: 15px;
+    }
+
+    .field input,
+    .field select {
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .field label {
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   13. RESPONSIVE SMALL LAPTOP
+   901px - 1099px
+===================================================== */
+
+@media (min-width: 901px) and (max-width: 1099px) {
+
+    .form-wrap {
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .form-panel {
+        padding: 16px 18px 20px;
+    }
+
+    .form-panel h2 {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+
+    .form-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        column-gap: 14px;
+        row-gap: 14px;
+    }
+
+    .field label {
+        font-size: 11px;
+    }
+
+    .field input,
+    .field select {
+        height: 38px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .field-error {
+        font-size: 10px;
+    }
+
+    .form-check {
+        font-size: 11px;
+    }
+
+    .form-check label {
+        font-size: 11px;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        min-height: 36px;
+        padding: 0 14px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   14. RESPONSIVE TABLET
+   601px - 900px
+===================================================== */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .btn-back {
+        min-height: 36px;
+        padding: 0 13px;
+        font-size: 11px;
+    }
+
+    .form-wrap {
+        gap: 14px;
+        margin-top: 18px;
+    }
+
+    .form-panel {
+        padding: 16px;
+    }
+
+    .form-panel h2 {
+        font-size: 16px;
+    }
+
+    .form-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+
+    .field label {
+        font-size: 11px;
+    }
+
+    .field input,
+    .field select {
+        height: 38px;
+        padding: 0 10px;
+        font-size: 11px;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        min-height: 36px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   15. RESPONSIVE MOBILE
+   MAX 600px
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .btn-back {
+        min-height: 34px;
+        padding: 0 12px;
+
+        margin-bottom: 14px;
+
+        font-size: 11px;
+    }
+
+    .form-wrap {
+        gap: 12px;
+        margin-top: 16px;
+    }
+
+    .form-panel {
+        padding: 14px 12px 16px;
+        border-radius: 7px;
+    }
+
+    .form-panel h2 {
+        margin-bottom: 14px;
+        font-size: 15px;
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
+        row-gap: 13px;
+    }
+
+    .field label {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .field input,
+    .field select {
+        height: 38px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .field textarea {
+        min-height: 80px;
+        font-size: 12px;
+    }
+
+    .form-check {
+        padding: 2px 0 0;
+    }
+
+    .form-check label {
+        font-size: 11px;
+    }
+
+    .form-actions {
+        justify-content: stretch;
+        gap: 8px;
+    }
+
+    .form-actions button,
+    .form-actions a {
+        flex: 1 1 auto;
+        min-height: 36px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+}
+
+/* =====================================================
+   16. ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
