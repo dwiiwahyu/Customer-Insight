@@ -140,66 +140,6 @@
     width: 100%;
     margin-top: 22px;
 }
-
-/* =====================================================
-   5. FILTER SEARCH
-===================================================== */
-
-.filter-search {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-
-    width: 100%;
-    min-width: 0;
-    height: 42px;
-
-    padding: 0 12px;
-
-    background: #ffffff;
-    color: #777777;
-
-    border: 1px solid var(--border);
-    border-radius: 7px;
-}
-
-.filter-search svg {
-    width: 17px;
-    height: 17px;
-    flex: 0 0 17px;
-}
-
-.filter-search input {
-    flex: 1;
-    width: 100%;
-    min-width: 0;
-    height: 100%;
-
-    padding: 0;
-
-    border: none;
-    outline: none;
-
-    background: transparent;
-
-    font-family: inherit;
-    font-size: 12px;
-    color: var(--text);
-
-    text-overflow: ellipsis;
-}
-
-.filter-search input::placeholder {
-    font-size: 12px;
-    color: #888888;
-    opacity: 1;
-}
-
-.filter-search:focus-within {
-    border-color: var(--red);
-    box-shadow: 0 0 0 2px rgba(238,46,36,0.1);
-}
-
 /* =====================================================
    6. DROPDOWN FILTER
 ===================================================== */
